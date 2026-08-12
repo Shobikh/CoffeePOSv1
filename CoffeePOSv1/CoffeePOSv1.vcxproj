@@ -97,14 +97,14 @@
     <None Include="AdminSidebar.qml" />
     <None Include="CashierSidebar.qml" />
     <QtRcc Include="qml.qrc" />
-    <None Include="Brewdesk_dashboard.qml" />
-    <None Include="Brewdesk_inventory.qml" />
-    <None Include="Brewdesk_pos.qml" />
-    <None Include="Brewdesk_products.qml" />
-    <None Include="Brewdesk_reports.qml" />
-    <None Include="Brewdesk_settings.qml" />
-    <None Include="Brewdesk_suppliers.qml" />
-    <None Include="Brewdesk_transactions.qml" />
+    <None Include="DashboardPage.qml" />
+    <None Include="InventoryPage.qml" />
+    <None Include="PosPage.qml" />
+    <None Include="ProductsPage.qml" />
+    <None Include="ReportsPage.qml" />
+    <None Include="SettingsPage.qml" />
+    <None Include="SuppliersPage.qml" />
+    <None Include="TransactionsPage.qml" />
     <None Include="main.qml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

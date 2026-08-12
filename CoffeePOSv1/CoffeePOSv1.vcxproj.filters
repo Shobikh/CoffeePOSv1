@@ -34,28 +34,28 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Brewdesk_dashboard.qml">
+    <None Include="DashboardPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Brewdesk_inventory.qml">
+    <None Include="InventoryPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Brewdesk_pos.qml">
+    <None Include="PosPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Brewdesk_products.qml">
+    <None Include="ProductsPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Brewdesk_reports.qml">
+    <None Include="ReportsPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Brewdesk_settings.qml">
+    <None Include="SettingsPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Brewdesk_suppliers.qml">
+    <None Include="SuppliersPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Brewdesk_transactions.qml">
+    <None Include="TransactionsPage.qml">
       <Filter>Source Files</Filter>
     </None>
     <None Include="AdminSidebar.qml">

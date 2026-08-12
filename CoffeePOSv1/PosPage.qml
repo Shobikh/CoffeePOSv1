@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Shapes
 
 Rectangle {
-    id: brewdesk_pos
+    id: pos_page
 
     property double subtotalAmount: 0.00
     property double discountAmount: 0.00

@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Shapes
 
 Rectangle {
-    id: brewdesk_reports
+    id: reports_page
 
     height: 768
     width: 1366

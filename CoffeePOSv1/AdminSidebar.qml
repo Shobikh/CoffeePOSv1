@@ -109,7 +109,7 @@ Image {
                 hoverEnabled: true
                 onClicked: {
                     console.log("Dashboard clicked")
-                    mainLoader.source = "Brewdesk_dashboard.qml"
+                    mainLoader.source = "DashboardPage.qml"
                 }
             }
 
@@ -187,7 +187,7 @@ Image {
                 hoverEnabled: true
                 onClicked: {
                     console.log("POS clicked")
-                    mainLoader.source = "Brewdesk_pos.qml"
+                    mainLoader.source = "PosPage.qml"
                 }
             }
             Rectangle {
@@ -264,7 +264,7 @@ Image {
                 hoverEnabled: true
                 onClicked: {
                     console.log("Products clicked")
-                    mainLoader.source = "Brewdesk_products.qml"
+                    mainLoader.source = "ProductsPage.qml"
                 }
             }
 
@@ -341,7 +341,7 @@ Image {
                 hoverEnabled: true
                 onClicked: {
                     console.log("Inventory clicked")
-                    mainLoader.source = "Brewdesk_inventory.qml"
+                    mainLoader.source = "InventoryPage.qml"
                 }
             }
             Rectangle {
@@ -417,7 +417,7 @@ Image {
                 hoverEnabled: true
                 onClicked: {
                     console.log("Suppliers clicked")
-                    mainLoader.source = "Brewdesk_suppliers.qml"
+                    mainLoader.source = "SuppliersPage.qml"
                 }
             }
             Rectangle {
@@ -493,7 +493,7 @@ Image {
                 hoverEnabled: true
                 onClicked: {
                     console.log("Transactions clicked")
-                    mainLoader.source = "Brewdesk_transactions.qml"
+                    mainLoader.source = "TransactionsPage.qml"
                 }
             }
             Rectangle {
@@ -569,7 +569,7 @@ Image {
                 hoverEnabled: true
                 onClicked: {
                     console.log("Reports clicked")
-                    mainLoader.source = "Brewdesk_reports.qml"
+                    mainLoader.source = "ReportsPage.qml"
                 }
             }
             Rectangle {
@@ -645,7 +645,7 @@ Image {
                 hoverEnabled: true
                 onClicked: {
                     console.log("Settings clicked")
-                    mainLoader.source = "Brewdesk_settings.qml"
+                    mainLoader.source = "SettingsPage.qml"
                 }
             }
             Rectangle {

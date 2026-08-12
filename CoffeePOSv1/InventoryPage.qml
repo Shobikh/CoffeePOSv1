@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Shapes
 
 Rectangle {
-    id: brewdesk_transactions
+    id: inventory_page
 
     height: 768
     width: 1366
@@ -10,30 +10,14 @@ Rectangle {
     clip: true
     color: "#fbfbfb"
 
-    Loader{
-        sourceComponent: mainLoader.member_status == "admin" ? sidebarAdmin : sidebarCashier
-    }
-
-    Component{
-        id: sidebarAdmin
-            AdminSidebar{
-                activePage: "transactions"
-                x: 0
-                y: 0
-            }
-    }
-
-    Component{
-        id: sidebarCashier
-            CashierSidebar{
-                activePage: "transactions"
-                x: 0
-                y: 0
-            }
+    AdminSidebar{
+        activePage: "inventory"
+        x: 0
+        y: 0
     }
 
     Rectangle {
-        id: main_content
+        id: inventory_pane
 
         x: 200
 
@@ -45,7 +29,7 @@ Rectangle {
         Image {
             id: top_header
 
-            source: Qt.resolvedUrl("assets/top_header_5.png")
+            source: Qt.resolvedUrl("assets/top_header_3.png")
 
             Rectangle {
                 id: title_block
@@ -54,7 +38,7 @@ Rectangle {
                 y: 16
 
                 height: 43
-                width: 243
+                width: 240
 
                 color: "transparent"
 
@@ -62,14 +46,14 @@ Rectangle {
                     id: page_title
 
                     height: 23
-                    width: 110
+                    width: 241
 
                     color: "#1a1d20"
                     font.family: "IBM Plex Sans"
                     font.pixelSize: 18
                     font.weight: Font.Bold
                     horizontalAlignment: Text.AlignLeft
-                    text: "Transactions"
+                    text: "Real-time Inventory Monitor"
                     textFormat: Text.PlainText
                     verticalAlignment: Text.AlignTop
                 }
@@ -79,14 +63,14 @@ Rectangle {
                     y: 27
 
                     height: 16
-                    width: 244
+                    width: 219
 
                     color: "#8e9599"
                     font.family: "IBM Plex Sans"
                     font.pixelSize: 12
                     font.weight: Font.Normal
                     horizontalAlignment: Text.AlignLeft
-                    text: "Audit and track historic daily operational logs"
+                    text: "Stock valuation, stock adjustment tracks"
                     textFormat: Text.PlainText
                     verticalAlignment: Text.AlignTop
                 }
@@ -94,25 +78,25 @@ Rectangle {
             Rectangle {
                 id: user_profile_badge
 
-                x: 984
+                x: 991
                 y: 25.50
 
                 height: 24
-                width: 158
+                width: 151
 
                 color: "transparent"
 
                 Text {
                     id: cashier_label
 
-                    y: 3.50
+                    y: 4
 
-                    height: 17
-                    width: 85
+                    height: 16
+                    width: 78
 
                     color: "#5a6266"
                     font.family: "IBM Plex Sans"
-                    font.pixelSize: 13
+                    font.pixelSize: 12
                     font.weight: Font.Normal
                     horizontalAlignment: Text.AlignLeft
                     text: "Cashier Mode:"
@@ -122,7 +106,7 @@ Rectangle {
                 Rectangle {
                     id: cashier_pill
 
-                    x: 92
+                    x: 85
 
                     height: 24
                     width: 66
@@ -152,22 +136,22 @@ Rectangle {
             }
         }
         Rectangle {
-            id: scrollable_pane
+            id: page_content
 
             y: 75
 
-            height: 693
+            height: 449
             width: 1166
 
             color: "transparent"
 
             Rectangle {
-                id: stats_row
+                id: summary_tiles_row
 
                 x: 24
                 y: 24
 
-                height: 85
+                height: 87
                 width: 1118
 
                 color: "transparent"
@@ -175,7 +159,7 @@ Rectangle {
                 Rectangle {
                     id: stat_tile
 
-                    height: 85
+                    height: 87
                     width: 362
 
                     border.color: "#dee2e6"
@@ -188,17 +172,17 @@ Rectangle {
                         x: 16
                         y: 16
 
-                        height: 14
-                        width: 133
+                        height: 16
+                        width: 134
 
                         color: "#5a6266"
                         font.capitalization: Font.AllUppercase
                         font.family: "IBM Plex Sans"
                         font.letterSpacing: 0.06
-                        font.pixelSize: 11
+                        font.pixelSize: 12
                         font.weight: Font.DemiBold
                         horizontalAlignment: Text.AlignLeft
-                        text: "Today's Transactions"
+                        text: "Total Tracked Items"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                     }
@@ -206,158 +190,156 @@ Rectangle {
                         id: stat_value
 
                         x: 16
-                        y: 38
+                        y: 40
 
                         height: 31
-                        width: 45
+                        width: 137
 
                         color: "#1a1d20"
-                        font.family: "IBM Plex Mono"
+                        font.family: "IBM Plex Sans"
                         font.pixelSize: 24
                         font.weight: Font.Bold
                         horizontalAlignment: Text.AlignLeft
-                        text: "214"
+                        text: "48 Products"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                     }
                 }
                 Rectangle {
-                    id: stat_tile_1
+                    id: warning_stat
 
                     x: 378
 
-                    height: 85
+                    height: 87
                     width: 362
 
-                    border.color: "#dee2e6"
+                    border.color: "#b17a32"
                     border.width: 1
-                    color: "#ffffff"
+                    color: "#fef5e7"
 
                     Text {
-                        id: stat_label_1
+                        id: low_Stock_Warnings
 
                         x: 16
                         y: 16
 
-                        height: 14
-                        width: 99
+                        height: 16
+                        width: 136
 
-                        color: "#5a6266"
+                        color: "#b17a32"
                         font.capitalization: Font.AllUppercase
                         font.family: "IBM Plex Sans"
-                        font.letterSpacing: 0.06
-                        font.pixelSize: 11
+                        font.pixelSize: 12
                         font.weight: Font.DemiBold
                         horizontalAlignment: Text.AlignLeft
-                        text: "Today's Revenue"
+                        text: "Low Stock Warnings"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                     }
                     Text {
-                        id: stat_value_1
+                        id: alerting
 
                         x: 16
-                        y: 38
+                        y: 40
 
                         height: 31
-                        width: 131
+                        width: 145
 
                         color: "#1a1d20"
                         font.family: "IBM Plex Mono"
                         font.pixelSize: 24
                         font.weight: Font.Bold
                         horizontalAlignment: Text.AlignLeft
-                        text: "$1,842.50"
+                        text: "2 Alerting"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                     }
                 }
                 Rectangle {
-                    id: stat_tile_2
+                    id: danger_stat
 
                     x: 756
 
-                    height: 85
+                    height: 87
                     width: 362
 
-                    border.color: "#dee2e6"
+                    border.color: "#a53f3f"
                     border.width: 1
-                    color: "#ffffff"
+                    color: "#fceaea"
 
                     Text {
-                        id: stat_label_2
+                        id: out_of_Stock
 
                         x: 16
                         y: 16
 
-                        height: 14
-                        width: 90
+                        height: 16
+                        width: 85
 
-                        color: "#5a6266"
+                        color: "#a53f3f"
                         font.capitalization: Font.AllUppercase
                         font.family: "IBM Plex Sans"
-                        font.letterSpacing: 0.06
-                        font.pixelSize: 11
+                        font.pixelSize: 12
                         font.weight: Font.DemiBold
                         horizontalAlignment: Text.AlignLeft
-                        text: "Refunds Today"
+                        text: "Out of Stock"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                     }
                     Text {
-                        id: stat_value_2
+                        id: urgently_Empty
 
                         x: 16
-                        y: 38
+                        y: 40
 
                         height: 31
-                        width: 88
+                        width: 232
 
                         color: "#1a1d20"
                         font.family: "IBM Plex Mono"
                         font.pixelSize: 24
                         font.weight: Font.Bold
                         horizontalAlignment: Text.AlignLeft
-                        text: "$42.00"
+                        text: "1 Urgently Empty"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                     }
                 }
             }
             Rectangle {
-                id: toolbar
+                id: filter_bar
 
                 x: 24
-                y: 129
+                y: 131
 
-                height: 33
+                height: 32
                 width: 1118
 
                 color: "transparent"
 
                 Rectangle {
-                    id: search_filters
+                    id: filters_group
 
-                    height: 33
-                    width: 618
+                    height: 32
+                    width: 474
 
                     color: "transparent"
 
                     Rectangle {
-                        id: search_box
+                        id: search_field
 
-                        height: 33
-                        width: 260
+                        height: 32
+                        width: 220
 
                         border.color: "#dee2e6"
                         border.width: 1
                         color: "#ffffff"
 
                         Rectangle {
-                            id: search_icon
+                            id: search
 
                             x: 12
-                            y: 9.50
+                            y: 9
 
                             height: 14
                             width: 14
@@ -368,8 +350,11 @@ Rectangle {
                             Shape {
                                 id: _vector_9
 
-                                height: 14
-                                width: 14
+                                x: 1.75
+                                y: 1.75
+
+                                height: 10.50
+                                width: 10.50
 
                                 ShapePath {
                                     id: _vector_9_ShapePath0
@@ -381,7 +366,7 @@ Rectangle {
                                     PathSvg {
                                         id: _vector_9_ShapePath0_PathSvg0
 
-                                        path: "M 13.999999999999998 13.999999999999998 L 10.624473758018059 10.624473758018059 M 12.444336786149208 6.222168393074604 C 12.444336786149208 9.65857667256668 9.65857667256668 12.444336786149208 6.222168393074604 12.444336786149208 C 2.7857597956938616 12.444336786149208 0 9.65857667256668 0 6.222168393074604 C 0 2.7857597956938616 2.7857597956938616 0 6.222168393074604 0 C 9.65857667256668 0 12.444336786149208 2.7857597956938616 12.444336786149208 6.222168393074604 Z"
+                                        path: "M 10.500091552734375 10.500091552734375 L 7.96842472041161 7.96842472041161 M 9.333333615901045 4.666666807950523 C 9.333333615901045 7.2439955679252375 7.2439955679252375 9.333333615901045 4.666666807950523 9.333333615901045 C 2.0893377698207902 9.333333615901045 0 7.2439955679252375 0 4.666666807950523 C 0 2.0893377698207902 2.0893377698207902 0 4.666666807950523 0 C 7.2439955679252375 0 9.333333615901045 2.0893377698207902 9.333333615901045 4.666666807950523 Z"
                                     }
                                 }
                             }
@@ -392,252 +377,90 @@ Rectangle {
                             x: 34
                             y: 8
 
-                            height: 17
-                            width: 136
+                            height: 16
+                            width: 101
 
                             color: "#8e9599"
                             font.family: "IBM Plex Sans"
-                            font.pixelSize: 13
+                            font.pixelSize: 12
                             font.weight: Font.Normal
                             horizontalAlignment: Text.AlignLeft
-                            text: "Search by ID, Cashier..."
+                            text: "Search inventory..."
                             textFormat: Text.PlainText
                             verticalAlignment: Text.AlignTop
                         }
                     }
                     Rectangle {
-                        id: dropdown
+                        id: status_filter
 
-                        x: 272
+                        x: 232
 
-                        height: 33
-                        width: 111
+                        height: 32
+                        width: 116
 
                         border.color: "#dee2e6"
                         border.width: 1
                         color: "#ffffff"
 
                         Text {
-                            id: dropdown_text
+                            id: filter_text
 
                             x: 12
                             y: 8
 
-                            height: 17
-                            width: 70
+                            height: 16
+                            width: 93
 
                             color: "#5a6266"
                             font.family: "IBM Plex Sans"
-                            font.pixelSize: 13
+                            font.pixelSize: 12
                             font.weight: Font.Normal
                             horizontalAlignment: Text.AlignLeft
-                            text: "Date: Today"
+                            text: "Status: All Levels"
                             textFormat: Text.PlainText
                             verticalAlignment: Text.AlignTop
                         }
-                        Rectangle {
-                            id: chevron_down
-
-                            x: 89
-                            y: 11.50
-
-                            height: 10
-                            width: 10
-
-                            clip: true
-                            color: "transparent"
-
-                            Shape {
-                                id: _vector_10
-
-                                height: 10
-                                width: 10
-
-                                ShapePath {
-                                    id: _vector_10_ShapePath0
-
-                                    fillColor: "#00000000"
-                                    strokeColor: "#5a6266"
-                                    strokeWidth: 2
-
-                                    PathSvg {
-                                        id: _vector_10_ShapePath0_PathSvg0
-
-                                        path: "M 0 0 L 5 10 L 10 0"
-                                    }
-                                }
-                            }
-                        }
                     }
                     Rectangle {
-                        id: dropdown_1
+                        id: cat_filter
 
-                        x: 395
+                        x: 360
 
-                        height: 33
-                        width: 109
+                        height: 32
+                        width: 114
 
                         border.color: "#dee2e6"
                         border.width: 1
                         color: "#ffffff"
 
                         Text {
-                            id: dropdown_text_1
+                            id: filter_text_1
 
                             x: 12
                             y: 8
 
-                            height: 17
-                            width: 68
+                            height: 16
+                            width: 91
 
                             color: "#5a6266"
                             font.family: "IBM Plex Sans"
-                            font.pixelSize: 13
+                            font.pixelSize: 12
                             font.weight: Font.Normal
                             horizontalAlignment: Text.AlignLeft
-                            text: "Method: All"
+                            text: "Category: Coffee"
                             textFormat: Text.PlainText
                             verticalAlignment: Text.AlignTop
                         }
-                        Rectangle {
-                            id: chevron_down_1
-
-                            x: 87
-                            y: 11.50
-
-                            height: 10
-                            width: 10
-
-                            clip: true
-                            color: "transparent"
-
-                            Shape {
-                                id: _vector_11
-
-                                height: 10
-                                width: 10
-
-                                ShapePath {
-                                    id: _vector_11_ShapePath0
-
-                                    fillColor: "#00000000"
-                                    strokeColor: "#5a6266"
-                                    strokeWidth: 2
-
-                                    PathSvg {
-                                        id: _vector_11_ShapePath0_PathSvg0
-
-                                        path: "M 0 0 L 5 10 L 10 0"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    Rectangle {
-                        id: dropdown_2
-
-                        x: 516
-
-                        height: 33
-                        width: 102
-
-                        border.color: "#dee2e6"
-                        border.width: 1
-                        color: "#ffffff"
-
-                        Text {
-                            id: dropdown_text_2
-
-                            x: 12
-                            y: 8
-
-                            height: 17
-                            width: 61
-
-                            color: "#5a6266"
-                            font.family: "IBM Plex Sans"
-                            font.pixelSize: 13
-                            font.weight: Font.Normal
-                            horizontalAlignment: Text.AlignLeft
-                            text: "Status: All"
-                            textFormat: Text.PlainText
-                            verticalAlignment: Text.AlignTop
-                        }
-                        Rectangle {
-                            id: chevron_down_2
-
-                            x: 80
-                            y: 11.50
-
-                            height: 10
-                            width: 10
-
-                            clip: true
-                            color: "transparent"
-
-                            Shape {
-                                id: _vector_12
-
-                                height: 10
-                                width: 10
-
-                                ShapePath {
-                                    id: _vector_12_ShapePath0
-
-                                    fillColor: "#00000000"
-                                    strokeColor: "#5a6266"
-                                    strokeWidth: 2
-
-                                    PathSvg {
-                                        id: _vector_12_ShapePath0_PathSvg0
-
-                                        path: "M 0 0 L 5 10 L 10 0"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                Rectangle {
-                    id: quick_action_export
-
-                    x: 1018
-
-                    height: 33
-                    width: 100
-
-                    border.color: "#dee2e6"
-                    border.width: 1
-                    color: "#ffffff"
-                    radius: 2
-
-                    Text {
-                        id: btn_label
-
-                        x: 16
-                        y: 8
-
-                        height: 17
-                        width: 69
-
-                        color: "#5a6266"
-                        font.family: "IBM Plex Sans"
-                        font.pixelSize: 13
-                        font.weight: Font.DemiBold
-                        horizontalAlignment: Text.AlignLeft
-                        text: "Export CSV"
-                        textFormat: Text.PlainText
-                        verticalAlignment: Text.AlignTop
                     }
                 }
             }
             Rectangle {
-                id: product_table_card
+                id: inventory_table_container
 
                 x: 24
-                y: 182
+                y: 183
 
-                height: 177
+                height: 242
                 width: 1118
 
                 border.color: "#dee2e6"
@@ -645,7 +468,7 @@ Rectangle {
                 color: "#ffffff"
 
                 Rectangle {
-                    id: header_row
+                    id: table_headers
 
                     height: 42
                     width: 1118
@@ -661,7 +484,7 @@ Rectangle {
                         y: 14
 
                         height: 14
-                        width: 140
+                        width: 280
 
                         color: "transparent"
 
@@ -669,7 +492,7 @@ Rectangle {
                             id: header_label
 
                             height: 14
-                            width: 94
+                            width: 87
 
                             color: "#5a6266"
                             font.capitalization: Font.AllUppercase
@@ -678,7 +501,7 @@ Rectangle {
                             font.pixelSize: 11
                             font.weight: Font.DemiBold
                             horizontalAlignment: Text.AlignLeft
-                            text: "Transaction ID"
+                            text: "Product Name"
                             textFormat: Text.PlainText
                             verticalAlignment: Text.AlignTop
                         }
@@ -686,36 +509,7 @@ Rectangle {
                     Rectangle {
                         id: header_cell_1
 
-                        x: 154
-                        y: 14
-
-                        height: 14
-                        width: 160
-
-                        color: "transparent"
-
-                        Text {
-                            id: header_label_1
-
-                            height: 14
-                            width: 61
-
-                            color: "#5a6266"
-                            font.capitalization: Font.AllUppercase
-                            font.family: "IBM Plex Sans"
-                            font.letterSpacing: 0.06
-                            font.pixelSize: 11
-                            font.weight: Font.DemiBold
-                            horizontalAlignment: Text.AlignLeft
-                            text: "Date/Time"
-                            textFormat: Text.PlainText
-                            verticalAlignment: Text.AlignTop
-                        }
-                    }
-                    Rectangle {
-                        id: header_cell_2
-
-                        x: 314
+                        x: 294
                         y: 14
 
                         height: 14
@@ -724,10 +518,10 @@ Rectangle {
                         color: "transparent"
 
                         Text {
-                            id: header_label_2
+                            id: header_label_1
 
                             height: 14
-                            width: 50
+                            width: 24
 
                             color: "#5a6266"
                             font.capitalization: Font.AllUppercase
@@ -736,42 +530,42 @@ Rectangle {
                             font.pixelSize: 11
                             font.weight: Font.DemiBold
                             horizontalAlignment: Text.AlignLeft
-                            text: "Cashier"
+                            text: "SKU"
+                            textFormat: Text.PlainText
+                            verticalAlignment: Text.AlignTop
+                        }
+                    }
+                    Rectangle {
+                        id: header_cell_2
+
+                        x: 434
+                        y: 14
+
+                        height: 14
+                        width: 120
+
+                        color: "transparent"
+
+                        Text {
+                            id: header_label_2
+
+                            height: 14
+                            width: 59
+
+                            color: "#5a6266"
+                            font.capitalization: Font.AllUppercase
+                            font.family: "IBM Plex Sans"
+                            font.letterSpacing: 0.06
+                            font.pixelSize: 11
+                            font.weight: Font.DemiBold
+                            horizontalAlignment: Text.AlignLeft
+                            text: "Category"
                             textFormat: Text.PlainText
                             verticalAlignment: Text.AlignTop
                         }
                     }
                     Rectangle {
                         id: header_cell_3
-
-                        x: 454
-                        y: 14
-
-                        height: 14
-                        width: 100
-
-                        color: "transparent"
-
-                        Text {
-                            id: header_label_3
-
-                            height: 14
-                            width: 36
-
-                            color: "#5a6266"
-                            font.capitalization: Font.AllUppercase
-                            font.family: "IBM Plex Sans"
-                            font.letterSpacing: 0.06
-                            font.pixelSize: 11
-                            font.weight: Font.DemiBold
-                            horizontalAlignment: Text.AlignLeft
-                            text: "Items"
-                            textFormat: Text.PlainText
-                            verticalAlignment: Text.AlignTop
-                        }
-                    }
-                    Rectangle {
-                        id: header_cell_4
 
                         x: 554
                         y: 14
@@ -782,10 +576,10 @@ Rectangle {
                         color: "transparent"
 
                         Text {
-                            id: header_label_4
+                            id: header_label_3
 
                             height: 14
-                            width: 52
+                            width: 90
 
                             color: "#5a6266"
                             font.capitalization: Font.AllUppercase
@@ -794,7 +588,36 @@ Rectangle {
                             font.pixelSize: 11
                             font.weight: Font.DemiBold
                             horizontalAlignment: Text.AlignLeft
-                            text: "Payment"
+                            text: "Current Stock"
+                            textFormat: Text.PlainText
+                            verticalAlignment: Text.AlignTop
+                        }
+                    }
+                    Rectangle {
+                        id: header_cell_4
+
+                        x: 674
+                        y: 14
+
+                        height: 14
+                        width: 100
+
+                        color: "transparent"
+
+                        Text {
+                            id: header_label_4
+
+                            height: 14
+                            width: 29
+
+                            color: "#5a6266"
+                            font.capitalization: Font.AllUppercase
+                            font.family: "IBM Plex Sans"
+                            font.letterSpacing: 0.06
+                            font.pixelSize: 11
+                            font.weight: Font.DemiBold
+                            horizontalAlignment: Text.AlignLeft
+                            text: "Unit"
                             textFormat: Text.PlainText
                             verticalAlignment: Text.AlignTop
                         }
@@ -802,7 +625,36 @@ Rectangle {
                     Rectangle {
                         id: header_cell_5
 
-                        x: 674
+                        x: 774
+                        y: 14
+
+                        height: 14
+                        width: 110
+
+                        color: "transparent"
+
+                        Text {
+                            id: header_label_5
+
+                            height: 14
+                            width: 57
+
+                            color: "#5a6266"
+                            font.capitalization: Font.AllUppercase
+                            font.family: "IBM Plex Sans"
+                            font.letterSpacing: 0.06
+                            font.pixelSize: 11
+                            font.weight: Font.DemiBold
+                            horizontalAlignment: Text.AlignLeft
+                            text: "Min Limit"
+                            textFormat: Text.PlainText
+                            verticalAlignment: Text.AlignTop
+                        }
+                    }
+                    Rectangle {
+                        id: header_cell_6
+
+                        x: 884
                         y: 14
 
                         height: 14
@@ -811,7 +663,7 @@ Rectangle {
                         color: "transparent"
 
                         Text {
-                            id: header_label_5
+                            id: header_label_6
 
                             height: 14
                             width: 42
@@ -829,9 +681,9 @@ Rectangle {
                         }
                     }
                     Rectangle {
-                        id: header_cell_6
+                        id: header_cell_7
 
-                        x: 794
+                        x: 1004
                         y: 14
 
                         height: 14
@@ -840,10 +692,10 @@ Rectangle {
                         color: "transparent"
 
                         Text {
-                            id: header_label_6
+                            id: header_label_7
 
                             height: 14
-                            width: 35
+                            width: 80
 
                             color: "#5a6266"
                             font.capitalization: Font.AllUppercase
@@ -852,26 +704,26 @@ Rectangle {
                             font.pixelSize: 11
                             font.weight: Font.DemiBold
                             horizontalAlignment: Text.AlignLeft
-                            text: "Total"
+                            text: "Last Updated"
                             textFormat: Text.PlainText
                             verticalAlignment: Text.AlignTop
                         }
                     }
                     Rectangle {
-                        id: header_cell_7
+                        id: header_cell_8
 
-                        x: 914
+                        x: 1124
                         y: 14
 
                         height: 14
-                        width: 190
+                        width: 120
 
                         color: "transparent"
 
                         Text {
-                            id: header_label_7
+                            id: header_label_8
 
-                            x: 142
+                            x: 72
 
                             height: 14
                             width: 50
@@ -890,11 +742,11 @@ Rectangle {
                     }
                 }
                 Rectangle {
-                    id: row_item
+                    id: table_row_item
 
                     y: 42
 
-                    height: 45
+                    height: 50
                     width: 1118
 
                     border.color: "#dee2e6"
@@ -902,86 +754,48 @@ Rectangle {
                     color: "transparent"
 
                     Text {
-                        id: tx_id
+                        id: name
 
                         x: 14
-                        y: 14
+                        y: 16.50
 
                         height: 17
-                        width: 141
+                        width: 281
 
                         color: "#1a1d20"
+                        font.family: "IBM Plex Sans"
+                        font.pixelSize: 13
+                        font.weight: Font.DemiBold
+                        horizontalAlignment: Text.AlignLeft
+                        text: "Oat Milk 1L"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: sku
+
+                        x: 294
+                        y: 17
+
+                        height: 16
+                        width: 141
+
+                        color: "#5a6266"
                         font.family: "IBM Plex Mono"
-                        font.pixelSize: 13
+                        font.pixelSize: 12
                         font.weight: Font.Normal
                         horizontalAlignment: Text.AlignLeft
-                        text: "TX-1092"
+                        text: "SKU-CF-001"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                         wrapMode: Text.Wrap
                     }
                     Text {
-                        id: tx_time
+                        id: category
 
-                        x: 154
-                        y: 14
-
-                        height: 17
-                        width: 161
-
-                        color: "#5a6266"
-                        font.family: "IBM Plex Sans"
-                        font.pixelSize: 13
-                        font.weight: Font.Normal
-                        horizontalAlignment: Text.AlignLeft
-                        text: "Today, 11:24 AM"
-                        textFormat: Text.PlainText
-                        verticalAlignment: Text.AlignTop
-                        wrapMode: Text.Wrap
-                    }
-                    Text {
-                        id: tx_cashier
-
-                        x: 314
-                        y: 14
-
-                        height: 17
-                        width: 141
-
-                        color: "#1a1d20"
-                        font.family: "IBM Plex Sans"
-                        font.pixelSize: 13
-                        font.weight: Font.Normal
-                        horizontalAlignment: Text.AlignLeft
-                        text: "Elena R."
-                        textFormat: Text.PlainText
-                        verticalAlignment: Text.AlignTop
-                        wrapMode: Text.Wrap
-                    }
-                    Text {
-                        id: tx_items
-
-                        x: 454
-                        y: 14
-
-                        height: 17
-                        width: 101
-
-                        color: "#5a6266"
-                        font.family: "IBM Plex Sans"
-                        font.pixelSize: 13
-                        font.weight: Font.Normal
-                        horizontalAlignment: Text.AlignLeft
-                        text: "3 items"
-                        textFormat: Text.PlainText
-                        verticalAlignment: Text.AlignTop
-                        wrapMode: Text.Wrap
-                    }
-                    Text {
-                        id: tx_method
-
-                        x: 554
-                        y: 14
+                        x: 434
+                        y: 16.50
 
                         height: 17
                         width: 121
@@ -991,7 +805,64 @@ Rectangle {
                         font.pixelSize: 13
                         font.weight: Font.Normal
                         horizontalAlignment: Text.AlignLeft
-                        text: "Card"
+                        text: "Coffee"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: current
+
+                        x: 554
+                        y: 16.50
+
+                        height: 17
+                        width: 121
+
+                        color: "#1a1d20"
+                        font.family: "IBM Plex Mono"
+                        font.pixelSize: 13
+                        font.weight: Font.Normal
+                        horizontalAlignment: Text.AlignLeft
+                        text: "3"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: unit
+
+                        x: 674
+                        y: 16.50
+
+                        height: 17
+                        width: 101
+
+                        color: "#5a6266"
+                        font.family: "IBM Plex Sans"
+                        font.pixelSize: 13
+                        font.weight: Font.Normal
+                        horizontalAlignment: Text.AlignLeft
+                        text: "Boxes"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: min
+
+                        x: 774
+                        y: 16.50
+
+                        height: 17
+                        width: 111
+
+                        color: "#5a6266"
+                        font.family: "IBM Plex Mono"
+                        font.pixelSize: 13
+                        font.weight: Font.Normal
+                        horizontalAlignment: Text.AlignLeft
+                        text: "10"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                         wrapMode: Text.Wrap
@@ -999,8 +870,8 @@ Rectangle {
                     Rectangle {
                         id: frame
 
-                        x: 674
-                        y: 14
+                        x: 884
+                        y: 16.50
 
                         height: 17
                         width: 120
@@ -1011,9 +882,9 @@ Rectangle {
                             id: status_badge
 
                             height: 17
-                            width: 74
+                            width: 72
 
-                            color: "#eaf7ee"
+                            color: "#fef5e7"
                             radius: 2
 
                             Text {
@@ -1023,75 +894,89 @@ Rectangle {
                                 y: 2
 
                                 height: 13
-                                width: 59
+                                width: 57
 
-                                color: "#2b7a4b"
+                                color: "#b17a32"
                                 font.capitalization: Font.AllUppercase
                                 font.family: "IBM Plex Sans"
                                 font.pixelSize: 10
                                 font.weight: Font.DemiBold
                                 horizontalAlignment: Text.AlignLeft
-                                text: "Completed"
+                                text: "LOW STOCK"
                                 textFormat: Text.PlainText
                                 verticalAlignment: Text.AlignTop
                             }
                         }
                     }
                     Text {
-                        id: tx_total
+                        id: updated
 
-                        x: 794
-                        y: 14
+                        x: 1004
+                        y: 17
 
-                        height: 17
+                        height: 16
                         width: 121
 
-                        color: "#1a1d20"
-                        font.family: "IBM Plex Mono"
-                        font.pixelSize: 13
-                        font.weight: Font.Bold
+                        color: "#8e9599"
+                        font.family: "IBM Plex Sans"
+                        font.pixelSize: 12
+                        font.weight: Font.Normal
                         horizontalAlignment: Text.AlignLeft
-                        text: "$12.50"
+                        text: "10m ago"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                         wrapMode: Text.Wrap
                     }
                     Rectangle {
-                        id: row_actions
+                        id: action_block
 
-                        x: 914
+                        x: 1124
                         y: 14
 
-                        height: 17
-                        width: 190
+                        height: 22
+                        width: 120
 
                         color: "transparent"
 
-                        Text {
-                            id: act_view
+                        Rectangle {
+                            id: adjust_btn
 
-                            x: 114
+                            x: 35
 
-                            height: 17
-                            width: 77
+                            height: 22
+                            width: 85
 
-                            color: "#7b5c40"
-                            font.family: "IBM Plex Sans"
-                            font.pixelSize: 13
-                            font.weight: Font.DemiBold
-                            horizontalAlignment: Text.AlignLeft
-                            text: "View Details"
-                            textFormat: Text.PlainText
-                            verticalAlignment: Text.AlignTop
+                            border.color: "#7b5c40"
+                            border.width: 1
+                            color: "transparent"
+
+                            Text {
+                                id: adjust_label
+
+                                x: 10
+                                y: 4
+
+                                height: 14
+                                width: 66
+
+                                color: "#7b5c40"
+                                font.family: "IBM Plex Sans"
+                                font.pixelSize: 11
+                                font.weight: Font.DemiBold
+                                horizontalAlignment: Text.AlignLeft
+                                text: "Adjust Stock"
+                                textFormat: Text.PlainText
+                                verticalAlignment: Text.AlignTop
+                            }
                         }
                     }
                 }
                 Rectangle {
-                    id: row_item_1
+                    id: table_row_item_1
 
-                    y: 87
+                    y: 92
 
-                    height: 45
+                    height: 50
                     width: 1118
 
                     border.color: "#dee2e6"
@@ -1099,67 +984,86 @@ Rectangle {
                     color: "transparent"
 
                     Text {
-                        id: tx_id_1
+                        id: name_1
 
                         x: 14
-                        y: 14
+                        y: 16.50
 
                         height: 17
+                        width: 281
+
+                        color: "#1a1d20"
+                        font.family: "IBM Plex Sans"
+                        font.pixelSize: 13
+                        font.weight: Font.DemiBold
+                        horizontalAlignment: Text.AlignLeft
+                        text: "Espresso Roast Beans (Dark)"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: sku_1
+
+                        x: 294
+                        y: 17
+
+                        height: 16
                         width: 141
+
+                        color: "#5a6266"
+                        font.family: "IBM Plex Mono"
+                        font.pixelSize: 12
+                        font.weight: Font.Normal
+                        horizontalAlignment: Text.AlignLeft
+                        text: "SKU-CF-008"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: category_1
+
+                        x: 434
+                        y: 16.50
+
+                        height: 17
+                        width: 121
+
+                        color: "#1a1d20"
+                        font.family: "IBM Plex Sans"
+                        font.pixelSize: 13
+                        font.weight: Font.Normal
+                        horizontalAlignment: Text.AlignLeft
+                        text: "Coffee"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: current_1
+
+                        x: 554
+                        y: 16.50
+
+                        height: 17
+                        width: 121
 
                         color: "#1a1d20"
                         font.family: "IBM Plex Mono"
                         font.pixelSize: 13
                         font.weight: Font.Normal
                         horizontalAlignment: Text.AlignLeft
-                        text: "TX-1085"
+                        text: "2"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                         wrapMode: Text.Wrap
                     }
                     Text {
-                        id: tx_time_1
+                        id: unit_1
 
-                        x: 154
-                        y: 14
-
-                        height: 17
-                        width: 161
-
-                        color: "#5a6266"
-                        font.family: "IBM Plex Sans"
-                        font.pixelSize: 13
-                        font.weight: Font.Normal
-                        horizontalAlignment: Text.AlignLeft
-                        text: "Today, 09:45 AM"
-                        textFormat: Text.PlainText
-                        verticalAlignment: Text.AlignTop
-                        wrapMode: Text.Wrap
-                    }
-                    Text {
-                        id: tx_cashier_1
-
-                        x: 314
-                        y: 14
-
-                        height: 17
-                        width: 141
-
-                        color: "#1a1d20"
-                        font.family: "IBM Plex Sans"
-                        font.pixelSize: 13
-                        font.weight: Font.Normal
-                        horizontalAlignment: Text.AlignLeft
-                        text: "Elena R."
-                        textFormat: Text.PlainText
-                        verticalAlignment: Text.AlignTop
-                        wrapMode: Text.Wrap
-                    }
-                    Text {
-                        id: tx_items_1
-
-                        x: 454
-                        y: 14
+                        x: 674
+                        y: 16.50
 
                         height: 17
                         width: 101
@@ -1169,26 +1073,26 @@ Rectangle {
                         font.pixelSize: 13
                         font.weight: Font.Normal
                         horizontalAlignment: Text.AlignLeft
-                        text: "2 items"
+                        text: "Kg"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                         wrapMode: Text.Wrap
                     }
                     Text {
-                        id: tx_method_1
+                        id: min_1
 
-                        x: 554
-                        y: 14
+                        x: 774
+                        y: 16.50
 
                         height: 17
-                        width: 121
+                        width: 111
 
-                        color: "#1a1d20"
-                        font.family: "IBM Plex Sans"
+                        color: "#5a6266"
+                        font.family: "IBM Plex Mono"
                         font.pixelSize: 13
                         font.weight: Font.Normal
                         horizontalAlignment: Text.AlignLeft
-                        text: "Cash"
+                        text: "15"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                         wrapMode: Text.Wrap
@@ -1196,8 +1100,8 @@ Rectangle {
                     Rectangle {
                         id: frame_1
 
-                        x: 674
-                        y: 14
+                        x: 884
+                        y: 16.50
 
                         height: 17
                         width: 120
@@ -1208,7 +1112,7 @@ Rectangle {
                             id: status_badge_1
 
                             height: 17
-                            width: 69
+                            width: 72
 
                             color: "#fef5e7"
                             radius: 2
@@ -1220,7 +1124,7 @@ Rectangle {
                                 y: 2
 
                                 height: 13
-                                width: 54
+                                width: 57
 
                                 color: "#b17a32"
                                 font.capitalization: Font.AllUppercase
@@ -1228,67 +1132,81 @@ Rectangle {
                                 font.pixelSize: 10
                                 font.weight: Font.DemiBold
                                 horizontalAlignment: Text.AlignLeft
-                                text: "Refunded"
+                                text: "LOW STOCK"
                                 textFormat: Text.PlainText
                                 verticalAlignment: Text.AlignTop
                             }
                         }
                     }
                     Text {
-                        id: tx_total_1
+                        id: updated_1
 
-                        x: 794
-                        y: 14
+                        x: 1004
+                        y: 17
 
-                        height: 17
+                        height: 16
                         width: 121
 
-                        color: "#1a1d20"
-                        font.family: "IBM Plex Mono"
-                        font.pixelSize: 13
-                        font.weight: Font.Bold
+                        color: "#8e9599"
+                        font.family: "IBM Plex Sans"
+                        font.pixelSize: 12
+                        font.weight: Font.Normal
                         horizontalAlignment: Text.AlignLeft
-                        text: "$8.40"
+                        text: "1h ago"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                         wrapMode: Text.Wrap
                     }
                     Rectangle {
-                        id: row_actions_1
+                        id: action_block_1
 
-                        x: 914
+                        x: 1124
                         y: 14
 
-                        height: 17
-                        width: 190
+                        height: 22
+                        width: 120
 
                         color: "transparent"
 
-                        Text {
-                            id: act_view_1
+                        Rectangle {
+                            id: adjust_btn_1
 
-                            x: 114
+                            x: 35
 
-                            height: 17
-                            width: 77
+                            height: 22
+                            width: 85
 
-                            color: "#7b5c40"
-                            font.family: "IBM Plex Sans"
-                            font.pixelSize: 13
-                            font.weight: Font.DemiBold
-                            horizontalAlignment: Text.AlignLeft
-                            text: "View Details"
-                            textFormat: Text.PlainText
-                            verticalAlignment: Text.AlignTop
+                            border.color: "#7b5c40"
+                            border.width: 1
+                            color: "transparent"
+
+                            Text {
+                                id: adjust_label_1
+
+                                x: 10
+                                y: 4
+
+                                height: 14
+                                width: 66
+
+                                color: "#7b5c40"
+                                font.family: "IBM Plex Sans"
+                                font.pixelSize: 11
+                                font.weight: Font.DemiBold
+                                horizontalAlignment: Text.AlignLeft
+                                text: "Adjust Stock"
+                                textFormat: Text.PlainText
+                                verticalAlignment: Text.AlignTop
+                            }
                         }
                     }
                 }
                 Rectangle {
-                    id: row_item_2
+                    id: table_row_item_2
 
-                    y: 132
+                    y: 142
 
-                    height: 45
+                    height: 50
                     width: 1118
 
                     border.color: "#dee2e6"
@@ -1296,67 +1214,86 @@ Rectangle {
                     color: "transparent"
 
                     Text {
-                        id: tx_id_2
+                        id: name_2
 
                         x: 14
-                        y: 14
+                        y: 16.50
 
                         height: 17
+                        width: 281
+
+                        color: "#1a1d20"
+                        font.family: "IBM Plex Sans"
+                        font.pixelSize: 13
+                        font.weight: Font.DemiBold
+                        horizontalAlignment: Text.AlignLeft
+                        text: "Butter Croissant"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: sku_2
+
+                        x: 294
+                        y: 17
+
+                        height: 16
                         width: 141
+
+                        color: "#5a6266"
+                        font.family: "IBM Plex Mono"
+                        font.pixelSize: 12
+                        font.weight: Font.Normal
+                        horizontalAlignment: Text.AlignLeft
+                        text: "SKU-PA-051"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: category_2
+
+                        x: 434
+                        y: 16.50
+
+                        height: 17
+                        width: 121
+
+                        color: "#1a1d20"
+                        font.family: "IBM Plex Sans"
+                        font.pixelSize: 13
+                        font.weight: Font.Normal
+                        horizontalAlignment: Text.AlignLeft
+                        text: "Pastries"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: current_2
+
+                        x: 554
+                        y: 16.50
+
+                        height: 17
+                        width: 121
 
                         color: "#1a1d20"
                         font.family: "IBM Plex Mono"
                         font.pixelSize: 13
                         font.weight: Font.Normal
                         horizontalAlignment: Text.AlignLeft
-                        text: "TX-1074"
+                        text: "12"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                         wrapMode: Text.Wrap
                     }
                     Text {
-                        id: tx_time_2
+                        id: unit_2
 
-                        x: 154
-                        y: 14
-
-                        height: 17
-                        width: 161
-
-                        color: "#5a6266"
-                        font.family: "IBM Plex Sans"
-                        font.pixelSize: 13
-                        font.weight: Font.Normal
-                        horizontalAlignment: Text.AlignLeft
-                        text: "Yesterday, 04:12 PM"
-                        textFormat: Text.PlainText
-                        verticalAlignment: Text.AlignTop
-                        wrapMode: Text.Wrap
-                    }
-                    Text {
-                        id: tx_cashier_2
-
-                        x: 314
-                        y: 14
-
-                        height: 17
-                        width: 141
-
-                        color: "#1a1d20"
-                        font.family: "IBM Plex Sans"
-                        font.pixelSize: 13
-                        font.weight: Font.Normal
-                        horizontalAlignment: Text.AlignLeft
-                        text: "Marcus K."
-                        textFormat: Text.PlainText
-                        verticalAlignment: Text.AlignTop
-                        wrapMode: Text.Wrap
-                    }
-                    Text {
-                        id: tx_items_2
-
-                        x: 454
-                        y: 14
+                        x: 674
+                        y: 16.50
 
                         height: 17
                         width: 101
@@ -1366,26 +1303,26 @@ Rectangle {
                         font.pixelSize: 13
                         font.weight: Font.Normal
                         horizontalAlignment: Text.AlignLeft
-                        text: "5 items"
+                        text: "Pcs"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                         wrapMode: Text.Wrap
                     }
                     Text {
-                        id: tx_method_2
+                        id: min_2
 
-                        x: 554
-                        y: 14
+                        x: 774
+                        y: 16.50
 
                         height: 17
-                        width: 121
+                        width: 111
 
-                        color: "#1a1d20"
-                        font.family: "IBM Plex Sans"
+                        color: "#5a6266"
+                        font.family: "IBM Plex Mono"
                         font.pixelSize: 13
                         font.weight: Font.Normal
                         horizontalAlignment: Text.AlignLeft
-                        text: "Mobile"
+                        text: "5"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                         wrapMode: Text.Wrap
@@ -1393,8 +1330,8 @@ Rectangle {
                     Rectangle {
                         id: frame_2
 
-                        x: 674
-                        y: 14
+                        x: 884
+                        y: 16.50
 
                         height: 17
                         width: 120
@@ -1405,9 +1342,9 @@ Rectangle {
                             id: status_badge_2
 
                             height: 17
-                            width: 54
+                            width: 62
 
-                            color: "#fceaea"
+                            color: "#eaf7ee"
                             radius: 2
 
                             Text {
@@ -1417,25 +1354,157 @@ Rectangle {
                                 y: 2
 
                                 height: 13
-                                width: 39
+                                width: 47
 
-                                color: "#a53f3f"
+                                color: "#2b7a4b"
                                 font.capitalization: Font.AllUppercase
                                 font.family: "IBM Plex Sans"
                                 font.pixelSize: 10
                                 font.weight: Font.DemiBold
                                 horizontalAlignment: Text.AlignLeft
-                                text: "Voided"
+                                text: "IN STOCK"
                                 textFormat: Text.PlainText
                                 verticalAlignment: Text.AlignTop
                             }
                         }
                     }
                     Text {
-                        id: tx_total_2
+                        id: updated_2
 
-                        x: 794
+                        x: 1004
+                        y: 17
+
+                        height: 16
+                        width: 121
+
+                        color: "#8e9599"
+                        font.family: "IBM Plex Sans"
+                        font.pixelSize: 12
+                        font.weight: Font.Normal
+                        horizontalAlignment: Text.AlignLeft
+                        text: "3h ago"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Rectangle {
+                        id: action_block_2
+
+                        x: 1124
                         y: 14
+
+                        height: 22
+                        width: 120
+
+                        color: "transparent"
+
+                        Rectangle {
+                            id: adjust_btn_2
+
+                            x: 35
+
+                            height: 22
+                            width: 85
+
+                            border.color: "#7b5c40"
+                            border.width: 1
+                            color: "transparent"
+
+                            Text {
+                                id: adjust_label_2
+
+                                x: 10
+                                y: 4
+
+                                height: 14
+                                width: 66
+
+                                color: "#7b5c40"
+                                font.family: "IBM Plex Sans"
+                                font.pixelSize: 11
+                                font.weight: Font.DemiBold
+                                horizontalAlignment: Text.AlignLeft
+                                text: "Adjust Stock"
+                                textFormat: Text.PlainText
+                                verticalAlignment: Text.AlignTop
+                            }
+                        }
+                    }
+                }
+                Rectangle {
+                    id: table_row_item_3
+
+                    y: 192
+
+                    height: 50
+                    width: 1118
+
+                    border.color: "#dee2e6"
+                    border.width: 1
+                    color: "transparent"
+
+                    Text {
+                        id: name_3
+
+                        x: 14
+                        y: 16.50
+
+                        height: 17
+                        width: 281
+
+                        color: "#1a1d20"
+                        font.family: "IBM Plex Sans"
+                        font.pixelSize: 13
+                        font.weight: Font.DemiBold
+                        horizontalAlignment: Text.AlignLeft
+                        text: "Matcha Latte Powder"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: sku_3
+
+                        x: 294
+                        y: 17
+
+                        height: 16
+                        width: 141
+
+                        color: "#5a6266"
+                        font.family: "IBM Plex Mono"
+                        font.pixelSize: 12
+                        font.weight: Font.Normal
+                        horizontalAlignment: Text.AlignLeft
+                        text: "SKU-TE-018"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: category_3
+
+                        x: 434
+                        y: 16.50
+
+                        height: 17
+                        width: 121
+
+                        color: "#1a1d20"
+                        font.family: "IBM Plex Sans"
+                        font.pixelSize: 13
+                        font.weight: Font.Normal
+                        horizontalAlignment: Text.AlignLeft
+                        text: "Tea"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: current_3
+
+                        x: 554
+                        y: 16.50
 
                         height: 17
                         width: 121
@@ -1443,201 +1512,152 @@ Rectangle {
                         color: "#1a1d20"
                         font.family: "IBM Plex Mono"
                         font.pixelSize: 13
-                        font.weight: Font.Bold
+                        font.weight: Font.Normal
                         horizontalAlignment: Text.AlignLeft
-                        text: "$22.80"
+                        text: "0"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: unit_3
+
+                        x: 674
+                        y: 16.50
+
+                        height: 17
+                        width: 101
+
+                        color: "#5a6266"
+                        font.family: "IBM Plex Sans"
+                        font.pixelSize: 13
+                        font.weight: Font.Normal
+                        horizontalAlignment: Text.AlignLeft
+                        text: "Kg"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
+                    }
+                    Text {
+                        id: min_3
+
+                        x: 774
+                        y: 16.50
+
+                        height: 17
+                        width: 111
+
+                        color: "#5a6266"
+                        font.family: "IBM Plex Mono"
+                        font.pixelSize: 13
+                        font.weight: Font.Normal
+                        horizontalAlignment: Text.AlignLeft
+                        text: "5"
                         textFormat: Text.PlainText
                         verticalAlignment: Text.AlignTop
                         wrapMode: Text.Wrap
                     }
                     Rectangle {
-                        id: row_actions_2
+                        id: frame_3
 
-                        x: 914
-                        y: 14
+                        x: 884
+                        y: 16.50
 
                         height: 17
-                        width: 190
+                        width: 120
 
                         color: "transparent"
 
-                        Text {
-                            id: act_view_2
-
-                            x: 114
+                        Rectangle {
+                            id: status_badge_3
 
                             height: 17
-                            width: 77
+                            width: 86
 
-                            color: "#7b5c40"
-                            font.family: "IBM Plex Sans"
-                            font.pixelSize: 13
-                            font.weight: Font.DemiBold
-                            horizontalAlignment: Text.AlignLeft
-                            text: "View Details"
-                            textFormat: Text.PlainText
-                            verticalAlignment: Text.AlignTop
+                            color: "#fceaea"
+                            radius: 2
+
+                            Text {
+                                id: badge_text_3
+
+                                x: 8
+                                y: 2
+
+                                height: 13
+                                width: 71
+
+                                color: "#a53f3f"
+                                font.capitalization: Font.AllUppercase
+                                font.family: "IBM Plex Sans"
+                                font.pixelSize: 10
+                                font.weight: Font.DemiBold
+                                horizontalAlignment: Text.AlignLeft
+                                text: "OUT OF STOCK"
+                                textFormat: Text.PlainText
+                                verticalAlignment: Text.AlignTop
+                            }
                         }
                     }
-                }
-            }
-            Rectangle {
-                id: pagination_row
+                    Text {
+                        id: updated_3
 
-                x: 24
-                y: 379
+                        x: 1004
+                        y: 17
 
-                height: 24
-                width: 1118
+                        height: 16
+                        width: 121
 
-                color: "transparent"
-
-                Text {
-                    id: showing_count
-
-                    y: 3.50
-
-                    height: 17
-                    width: 203
-
-                    color: "#5a6266"
-                    font.family: "IBM Plex Sans"
-                    font.pixelSize: 13
-                    font.weight: Font.Normal
-                    horizontalAlignment: Text.AlignLeft
-                    text: "Showing 1-3 of 1,482 transactions"
-                    textFormat: Text.PlainText
-                    verticalAlignment: Text.AlignTop
-                }
-                Rectangle {
-                    id: page_indicators
-
-                    x: 956
-
-                    height: 24
-                    width: 162
-
-                    color: "transparent"
-
-                    Rectangle {
-                        id: prev
-
-                        height: 24
-                        width: 40
-
-                        border.color: "#dee2e6"
-                        border.width: 1
-                        color: "#ffffff"
-
-                        Text {
-                            id: prev_1
-
-                            x: 8
-                            y: 4
-
-                            height: 16
-                            width: 25
-
-                            color: "#5a6266"
-                            font.family: "IBM Plex Sans"
-                            font.pixelSize: 12
-                            font.weight: Font.Normal
-                            horizontalAlignment: Text.AlignLeft
-                            text: "Prev"
-                            textFormat: Text.PlainText
-                            verticalAlignment: Text.AlignTop
-                        }
+                        color: "#8e9599"
+                        font.family: "IBM Plex Sans"
+                        font.pixelSize: 12
+                        font.weight: Font.Normal
+                        horizontalAlignment: Text.AlignLeft
+                        text: "Yesterday"
+                        textFormat: Text.PlainText
+                        verticalAlignment: Text.AlignTop
+                        wrapMode: Text.Wrap
                     }
                     Rectangle {
-                        id: num_1
+                        id: action_block_3
 
-                        x: 48
+                        x: 1124
+                        y: 14
 
-                        height: 24
-                        width: 28
+                        height: 22
+                        width: 120
 
-                        color: "#7b5c40"
-                        radius: 2
+                        color: "transparent"
 
-                        Text {
-                            id: element
+                        Rectangle {
+                            id: adjust_btn_3
 
-                            x: 10
-                            y: 4
+                            x: 35
 
-                            height: 16
-                            width: 9
+                            height: 22
+                            width: 85
 
-                            color: "#ffffff"
-                            font.family: "IBM Plex Sans"
-                            font.pixelSize: 12
-                            font.weight: Font.DemiBold
-                            horizontalAlignment: Text.AlignLeft
-                            text: "1"
-                            textFormat: Text.PlainText
-                            verticalAlignment: Text.AlignTop
-                        }
-                    }
-                    Rectangle {
-                        id: num_2
+                            border.color: "#7b5c40"
+                            border.width: 1
+                            color: "transparent"
 
-                        x: 84
+                            Text {
+                                id: adjust_label_3
 
-                        height: 24
-                        width: 28
+                                x: 10
+                                y: 4
 
-                        border.color: "#dee2e6"
-                        border.width: 1
-                        color: "#ffffff"
+                                height: 14
+                                width: 66
 
-                        Text {
-                            id: element_1
-
-                            x: 10
-                            y: 4
-
-                            height: 16
-                            width: 9
-
-                            color: "#5a6266"
-                            font.family: "IBM Plex Sans"
-                            font.pixelSize: 12
-                            font.weight: Font.Normal
-                            horizontalAlignment: Text.AlignLeft
-                            text: "2"
-                            textFormat: Text.PlainText
-                            verticalAlignment: Text.AlignTop
-                        }
-                    }
-                    Rectangle {
-                        id: next
-
-                        x: 120
-
-                        height: 24
-                        width: 42
-
-                        border.color: "#dee2e6"
-                        border.width: 1
-                        color: "#ffffff"
-
-                        Text {
-                            id: next_1
-
-                            x: 8
-                            y: 4
-
-                            height: 16
-                            width: 27
-
-                            color: "#5a6266"
-                            font.family: "IBM Plex Sans"
-                            font.pixelSize: 12
-                            font.weight: Font.Normal
-                            horizontalAlignment: Text.AlignLeft
-                            text: "Next"
-                            textFormat: Text.PlainText
-                            verticalAlignment: Text.AlignTop
+                                color: "#7b5c40"
+                                font.family: "IBM Plex Sans"
+                                font.pixelSize: 11
+                                font.weight: Font.DemiBold
+                                horizontalAlignment: Text.AlignLeft
+                                text: "Adjust Stock"
+                                textFormat: Text.PlainText
+                                verticalAlignment: Text.AlignTop
+                            }
                         }
                     }
                 }

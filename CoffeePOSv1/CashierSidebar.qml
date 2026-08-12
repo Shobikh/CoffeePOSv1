@@ -109,7 +109,7 @@ Image {
                 hoverEnabled: true
                 onClicked: {
                     console.log("POS clicked")
-                    mainLoader.source = "Brewdesk_pos.qml"
+                    mainLoader.source = "PosPage.qml"
                 }
             }
 
@@ -187,7 +187,7 @@ Image {
                 hoverEnabled: true
                 onClicked: {
                     console.log("Transactions clicked")
-                    mainLoader.source = "Brewdesk_transactions.qml"
+                    mainLoader.source = "TransactionsPage.qml"
                 }
             }
             Rectangle {
@@ -264,7 +264,7 @@ Image {
                 hoverEnabled: true
                 onClicked: {
                     console.log("Reports clicked")
-                    mainLoader.source = "Brewdesk_reports.qml"
+                    mainLoader.source = "ReportsPage.qml"
                 }
             }
 

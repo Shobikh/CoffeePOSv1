@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Shapes
 
 Rectangle {
-    id: brewdesk_settings
+    id: settings_page
 
     height: 768
     width: 1366
@@ -10,7 +10,7 @@ Rectangle {
     clip: true
     color: "#fbfbfb"
 
-    Sidebar{
+    AdminSidebar{
         activePage: "settings"
         x: 0
         y: 0

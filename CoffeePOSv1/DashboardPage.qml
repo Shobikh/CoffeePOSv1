@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Shapes
 
 Rectangle {
-    id: brewdesk_dashboard
+    id: dashboard_page
 
     height: 768
     width: 1366
@@ -10,26 +10,10 @@ Rectangle {
     clip: true
     color: "#fbfbfb"
 
-    Loader{
-        sourceComponent: mainLoader.member_status == "admin" ? sidebarAdmin : sidebarCashier
-    }
-
-    Component{
-        id: sidebarAdmin
-            Sidebar{
-                activePage: "dashboard"
-                x: 0
-                y: 0
-            }
-    }
-
-    Component{
-        id: sidebarCashier
-            Sidebar_Member{
-                activePage: "dashboard"
-                x: 0
-                y: 0
-            }
+    AdminSidebar{
+        activePage: "dashboard"
+        x: 0
+        y: 0
     }
 
     Rectangle {
