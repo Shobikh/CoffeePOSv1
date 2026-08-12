@@ -9,7 +9,7 @@
         <file>Brewdesk_settings.qml</file>
         <file>Brewdesk_suppliers.qml</file>
         <file>Brewdesk_transactions.qml</file>
-        <file>Sidebar.qml</file>
-        <file>Sidebar_Member.qml</file>
+        <file>CashierSidebar.qml</file>
+        <file>AdminSidebar.qml</file>
     </qresource>
 </RCC>

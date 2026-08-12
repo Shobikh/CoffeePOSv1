@@ -48,7 +48,7 @@ Rectangle {
 
     Component{
         id: sidebarAdmin
-            Sidebar{
+            AdminSidebar{
                 activePage: "pos"
                 x: 0
                 y: 0
@@ -57,7 +57,7 @@ Rectangle {
 
     Component{
         id: sidebarCashier
-            Sidebar_Member{
+            CashierSidebar{
                 activePage: "pos"
                 x: 0
                 y: 0

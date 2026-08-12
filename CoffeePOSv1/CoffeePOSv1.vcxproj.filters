@@ -58,10 +58,10 @@
     <None Include="Brewdesk_transactions.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Sidebar.qml">
+    <None Include="AdminSidebar.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Sidebar_Member.qml">
+    <None Include="CashierSidebar.qml">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

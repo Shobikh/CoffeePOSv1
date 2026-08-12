@@ -4,7 +4,7 @@ import QtQuick.Shapes
 Image {
     id: sidebar_member
     source: Qt.resolvedUrl("assets/sidebar.png")
-    property string activePage: "dashboard"
+    property string activePage: "pos"
 
     Rectangle {
         id: brand_wrapper
@@ -108,8 +108,8 @@ Image {
                 cursorShape: Qt.PointingHandCursor
                 hoverEnabled: true
                 onClicked: {
-                    console.log("Dashboard clicked")
-                    mainLoader.source = "Brewdesk_dashboard.qml"
+                    console.log("POS clicked")
+                    mainLoader.source = "Brewdesk_pos.qml"
                 }
             }
 
