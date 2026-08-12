@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/qt/qml/coffeeposv1">
+        <file>main.qml</file>
+        <file>Brewdesk_dashboard.qml</file>
+        <file>Brewdesk_inventory.qml</file>
+        <file>Brewdesk_pos.qml</file>
+        <file>Brewdesk_products.qml</file>
+        <file>Brewdesk_reports.qml</file>
+        <file>Brewdesk_settings.qml</file>
+        <file>Brewdesk_suppliers.qml</file>
+        <file>Brewdesk_transactions.qml</file>
+        <file>Sidebar.qml</file>
+    </qresource>
+</RCC>
