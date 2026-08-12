@@ -10,9 +10,9 @@ Window {
     Loader {
         id: mainLoader
         // Uji Coba Beda Sidebar
-        property string member_status: "member"
+        property string member_status: "cashier"
         //
         anchors.fill: parent
-        source: "Brewdesk_dashboard.qml"
+        source: member_status === "admin" ? "Brewdesk_dashboard.qml" : "Brewdesk_pos.qml"
     }
 }

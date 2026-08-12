@@ -102,23 +102,7 @@ Rectangle {
 
                 color: "transparent"
 
-                Text {
-                    id: cashier_label
-
-                    y: 4
-
-                    height: 16
-                    width: 78
-
-                    color: "#5a6266"
-                    font.family: "IBM Plex Sans"
-                    font.pixelSize: 12
-                    font.weight: Font.Normal
-                    horizontalAlignment: Text.AlignLeft
-                    text: "Cashier Mode:"
-                    textFormat: Text.PlainText
-                    verticalAlignment: Text.AlignTop
-                }
+                
                 Rectangle {
                     id: cashier_pill
 
@@ -143,10 +127,10 @@ Rectangle {
                         font.family: "IBM Plex Sans"
                         font.pixelSize: 12
                         font.weight: Font.DemiBold
-                        horizontalAlignment: Text.AlignLeft
-                        text: "Elena R."
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "Admin"
                         textFormat: Text.PlainText
-                        verticalAlignment: Text.AlignTop
+                        verticalAlignment: Text.AlignVCenter
                     }
                 }
             }

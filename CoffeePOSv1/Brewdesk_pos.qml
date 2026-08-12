@@ -806,7 +806,7 @@ Rectangle {
                     font.pixelSize: 13
                     font.weight: Font.Normal
                     horizontalAlignment: Text.AlignLeft
-                    text: "-$1.50"
+                    text: -"$" + discountAmount.toFixed(2)
                     textFormat: Text.PlainText
                     verticalAlignment: Text.AlignTop
                 }

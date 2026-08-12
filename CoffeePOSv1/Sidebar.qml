@@ -78,7 +78,7 @@ Image {
             font.pixelSize: 16
             font.weight: Font.Bold
             horizontalAlignment: Text.AlignLeft
-            text: "BrewDesk"
+            text: "Jahis Coffee"
             textFormat: Text.PlainText
             verticalAlignment: Text.AlignTop
         }
