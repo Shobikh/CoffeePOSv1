@@ -42,10 +42,26 @@ Rectangle {
         calculateTotal();
     }
     
-    Sidebar{
-        activePage: "pos"
-        x: 0
-        y: 0
+    Loader{
+        sourceComponent: mainLoader.member_status == "admin" ? sidebarAdmin : sidebarCashier
+    }
+
+    Component{
+        id: sidebarAdmin
+            Sidebar{
+                activePage: "pos"
+                x: 0
+                y: 0
+            }
+    }
+
+    Component{
+        id: sidebarCashier
+            Sidebar_Member{
+                activePage: "pos"
+                x: 0
+                y: 0
+            }
     }
 
     Rectangle {

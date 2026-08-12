@@ -61,5 +61,8 @@
     <None Include="Sidebar.qml">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="Sidebar_Member.qml">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

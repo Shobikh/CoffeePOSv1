@@ -10,10 +10,26 @@ Rectangle {
     clip: true
     color: "#fbfbfb"
 
-    Sidebar{
-        activePage: "dashboard"
-        x: 0
-        y: 0
+    Loader{
+        sourceComponent: mainLoader.member_status == "admin" ? sidebarAdmin : sidebarCashier
+    }
+
+    Component{
+        id: sidebarAdmin
+            Sidebar{
+                activePage: "dashboard"
+                x: 0
+                y: 0
+            }
+    }
+
+    Component{
+        id: sidebarCashier
+            Sidebar_Member{
+                activePage: "dashboard"
+                x: 0
+                y: 0
+            }
     }
 
     Rectangle {

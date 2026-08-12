@@ -10,5 +10,6 @@
         <file>Brewdesk_suppliers.qml</file>
         <file>Brewdesk_transactions.qml</file>
         <file>Sidebar.qml</file>
+        <file>Sidebar_Member.qml</file>
     </qresource>
 </RCC>

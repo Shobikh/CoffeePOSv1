@@ -95,6 +95,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <None Include="Sidebar.qml" />
+    <None Include="Sidebar_Member.qml" />
     <QtRcc Include="qml.qrc" />
     <None Include="Brewdesk_dashboard.qml" />
     <None Include="Brewdesk_inventory.qml" />

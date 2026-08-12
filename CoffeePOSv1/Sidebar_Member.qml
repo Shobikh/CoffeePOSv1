@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Shapes
 
 Image {
-    id: sidebar
+    id: sidebar_member
     source: Qt.resolvedUrl("assets/sidebar.png")
     property string activePage: "dashboard"
 
@@ -163,7 +163,7 @@ Image {
                 font.pixelSize: 13
                 font.weight: Font.DemiBold
                 horizontalAlignment: Text.AlignLeft
-                text: "Dashboard"
+                text: "Dashboard Member"
                 textFormat: Text.PlainText
                 verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
