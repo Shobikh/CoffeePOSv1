@@ -26,10 +26,11 @@ Rectangle {
 
         color: "transparent"
 
-        Image {
+        Rectangle {
             id: top_header
-
-            source: Qt.resolvedUrl("assets/top_header.png")
+            width: 1166
+            height: 75
+            color: "#ffffff"
 
             Rectangle {
                 id: title_block

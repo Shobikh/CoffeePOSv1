@@ -13,6 +13,6 @@ Window {
         property string member_status: "admin"
         //
         anchors.fill: parent
-        source: member_status === "admin" ? "LoginPage.qml" : "PosPage.qml"
+        source: member_status === "admin" ? "DashboardPage.qml" : "PosPage.qml"
     }
 }

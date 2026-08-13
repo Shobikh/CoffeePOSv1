@@ -1,9 +1,11 @@
 import QtQuick
 import QtQuick.Shapes
 
-Image {
+Rectangle {
     id: sidebar_member
-    source: Qt.resolvedUrl("assets/sidebar.png")
+    width: 200
+    height: 768
+    color: "#f5ece5"
     property string activePage: "pos"
 
     Rectangle {

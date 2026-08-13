@@ -1,5 +1,7 @@
 import QtQuick
 import QtQuick.Shapes
+import QtQuick.Controls
+import QtQuick.Layouts
 
 Rectangle {
     id: pos_page
@@ -74,10 +76,12 @@ Rectangle {
 
         color: "transparent"
 
-        Image {
+        Rectangle {
             id: top_header
-
-            source: Qt.resolvedUrl("assets/top_header_1.png")
+            width: 826
+            height: 75
+            //source: Qt.resolvedUrl("assets/top_header_1.png")
+            color: "#ffffff"
 
             Rectangle {
                 id: title_block
@@ -206,7 +210,7 @@ Rectangle {
 
                 border.color: "#dee2e6"
                 border.width: 1
-                color: activeTab === cat_tab_All ? "#dee2e6" : (tabAllMouse.containsMouse ? "#fef5e7" : "#efe3d8")
+                color: cat_tab_All.activeFocus ? "#dee2e6" : (tabAllMouse.containsMouse ? "#fef5e7" : "#ffffff")
                 radius: 2
 
                 MouseArea{
@@ -216,6 +220,7 @@ Rectangle {
                     hoverEnabled: true
                     onClicked: {
                         console.log("All category clicked");
+                        cat_tab_All.color = "#dee2e6";
                         // Here you can add the logic to filter products by "All" category
                     }
                 }
@@ -250,7 +255,7 @@ Rectangle {
 
                 border.color: "#dee2e6"
                 border.width: 1
-                color: activeTab === cat_tab_Coffee ? "#fef5e7" : (tabCoffeeMouse.containsMouse ? "#fef5e7" : "#ffffff")
+                color: cat_tab_Coffee.activeFocus ? "#fef5e7" : "#ffffff"
                 radius: 2
 
                 MouseArea{
@@ -258,9 +263,15 @@ Rectangle {
                     anchors.fill: parent
                     cursorShape: Qt.PointingHandCursor
                     hoverEnabled: true
+                    onEntered: {
+                        cat_tab_Coffee.color = "#fef5e7";
+                    }
+                    onExited: {
+                        cat_tab_Coffee.color = "#ffffff";
+                    }
                     onClicked: {
                         console.log("Coffee category clicked");
-                        activeTab: cat_tab_Coffee
+                        cat_tab_Coffee.forceActiveFocus();
                         // Here you can add the logic to filter products by "Coffee" category
                     }
                 }
@@ -612,12 +623,13 @@ Rectangle {
             }
         }
     }
-    Image {
+    Rectangle {
         id: checkout_cart
-
+        width: 340
+        height: 768
         x: 1026
-
-        source: Qt.resolvedUrl("assets/checkout_cart.png")
+        color: "#ffffff"
+        border.color: "#dee2e6"
 
         Rectangle {
             id: cart_header
