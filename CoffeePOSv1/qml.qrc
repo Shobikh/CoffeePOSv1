@@ -15,5 +15,6 @@
         <file>LoginPage.qml</file>
         <file>PosPaymentPage.qml</file>
         <file>ReceiptPage.qml</file>
+        <file>assets/applogo.png</file>
     </qresource>
 </RCC>

@@ -1,205 +1,174 @@
 import QtQuick
-import QtQuick.Shapes
 import QtQuick.Controls
 import QtQuick.Layouts
 
-Rectangle {
-    id: login_page
+Rectangle{
+	id: loginPage
+	color: "#f5ece5"
 
-    height: 768
-    width: 1366
-    color: "#f5ece5"
-    Rectangle{
-        id: login_card
-        width: 400
-        height: 480
-        color: "#ffffff"
-        radius: 10
-        anchors.centerIn: parent
-        Image{
-            id: brand_logo
-            source: "assets/top_header.png"
-            width: 48
-            height: 48
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: parent.top
-            anchors.topMargin: 40
-        }
-        Text{
-            id: brand_name
-            text: "Jahis Coffee"
-            font.family: "IBM Plex Sans"
-            font.pixelSize: 24
-            font.weight: Font.Bold
-            color: "#1a1d20"
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: brand_logo.bottom
-            anchors.topMargin: 16
-        }
-        Text{
-            id: brand_tagline
-            text: "Daily Operations Control"
-            font.family: "IBM Plex Sans"
-            font.pixelSize: 14
-            font.weight: Font.Normal
-            color: "#5a6266"
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: brand_name.bottom
-            anchors.topMargin: 4
-        }
+	Rectangle{
+		id: loginCard
+		width: 400
+		height: 480
+		anchors.centerIn: parent
+		color: "#ffffff"
+		radius: 4
 
-        Rectangle{
-            id: login_form
-            width: 320
-            height: 177
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: brand_tagline.bottom
-            anchors.topMargin: 32
-            //border.color: "#1a1d20"
+		Column{
+			spacing: 32
+			anchors.horizontalCenter: parent.horizontalCenter
+			anchors.fill: parent
+			anchors.margins: 40
 
-            Rectangle{
-                id: username_field
-                width: 320
-                height: 60
-                anchors.top: parent.top
-                anchors.topMargin: 0
-                color: "#ffffff"
-                //border.color: "#dee2e6"
+			Column{
+				id: loginCardHeader
+				spacing: 12
+				anchors.horizontalCenter: parent.horizontalCenter
 
-                Text{
-                    id: username_label
-                    text: "USERNAME"
-                    font.family: "IBM Plex Sans"
-                    font.pixelSize: 12
-                    font.weight: Font.Normal
-                    color: "#5a6266"
-                }
-                Rectangle{
-                    id: username_input
-                    width: 320
-                    height: 38
-                    anchors.top: username_label.bottom
-                    anchors.topMargin: 6
-                    color: "#ffffff"
-                    border.color: username_textfield.activeFocus ? "#f5ece5" : (username_input_mousearea.containsMouse ? "#f5ece5" : "#5a6266")
-                    radius: 4
-                    TextField{
-                        id: username_textfield
-                        anchors.fill: parent
-                        anchors.margins: 8
-                        font.family: "IBM Plex Sans"
-                        font.pixelSize: 14
-                        font.weight: Font.Normal
-                        color: "#1a1d20"
-                        placeholderText: "Enter your username"
-                        placeholderTextColor: "#5a6266"
-                        background: Rectangle {
-                            color: "transparent"
-                        }
-                        MouseArea{
-                            id: username_input_mousearea
-                            anchors.fill: parent
-                            hoverEnabled: true
-                            cursorShape: Qt.IBeamCursor
-                            onClicked:{
-                                username_textfield.forceActiveFocus()
-                            }
-                        }
-                    }
-                }
-            }
-            Rectangle{
-                id: password_field
-                width: 320
-                height: 60
-                anchors.top: username_field.bottom
-                anchors.topMargin: 20
-                color: "#ffffff"
-                //border.color: "#dee2e6"
-                radius: 4
-                Text{
-                    id: password_label
-                    text: "PASSWORD"
-                    font.family: "IBM Plex Sans"
-                    font.pixelSize: 12
-                    font.weight: Font.Normal
-                    color: "#5a6266"
-                }
-                Rectangle{
-                    id: password_input
-                    width: 320
-                    height: 38
-                    anchors.top: password_label.bottom
-                    anchors.topMargin: 6
-                    color: "#ffffff"
-                    border.color: password_textfield.activeFocus ? "#f5ece5" : (password_input_mousearea.containsMouse ? "#f5ece5" : "#5a6266")
-                    radius: 4
-                    TextField{
-                        id: password_textfield
-                        anchors.fill: parent
-                        anchors.margins: 8
-                        font.family: "IBM Plex Sans"
-                        font.pixelSize: 14
-                        font.weight: Font.Normal
-                        color: "#1a1d20"
-                        placeholderText: "Enter your password"
-                        placeholderTextColor: "#5a6266"
-                        echoMode: TextInput.Password
-                        background: Rectangle {
-                            color: "transparent"
-                        }
-                        MouseArea{
-                            id: password_input_mousearea
-                            anchors.fill: parent
-                            hoverEnabled: true
-                            cursorShape: Qt.IBeamCursor
-                            onClicked:{
-                                password_textfield.forceActiveFocus()
-                            }
-                        }
-                    }
-                }
-            }
-            Rectangle{
-                id: other_options_field
-                width: 320
-                height: 17
-                anchors.top: password_field.bottom
-                anchors.topMargin: 20
-                color: "#ffffff"
-                border.color: "#dee2e6"
-            }
-        }
+				Image{
+					id: appLogo
+					source: Qt.resolvedUrl("assets/applogo.png")
+					width: 48
+					height: 48
+					anchors.horizontalCenter: parent.horizontalCenter
+				}
+				Column{
+					id: appTitleGroup
+					width: parent.width
+					spacing: 4
 
-        Rectangle{
-            id: login_button
-            width: 320
-            height: 46
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: login_form.bottom
-            anchors.topMargin: 32
-            color: login_button_mousearea.containsMouse ? "#5a452d" : "#7b5c40"
-            radius: 4
+					Text{
+						id: appTitle
+						text: "Jahis Coffee"
+						font.family: "IBM Plex Sans"
+						font.pixelSize: 24
+						font.weight: Font.Bold
+						color: "#1a1d20"
+						anchors.horizontalCenter: parent.horizontalCenter
+					}
+					Text{
+						id: appSubtitle
+						text: "Daily Operations Control"
+						font.family: "IBM Plex Sans"
+						font.pixelSize: 14
+						font.weight: Font.Normal
+						color: "#5a6266"
+						anchors.horizontalCenter: parent.horizontalCenter
+					}
+				}
+			}
+			Column{
+				id: loginCardForm
+				width: parent.width
+				spacing: 20
+				
+				Column{
+					id: usernameForm
+					spacing: 6
+					width: parent.width
 
-            Text{
-                id: login_button_text
-                text: "Login"
-                font.family: "IBM Plex Sans"
-                font.pixelSize: 14
-                font.weight: Font.Bold
-                color: "#ffffff"
-                anchors.centerIn: parent
-            }
-            MouseArea{
-                id: login_button_mousearea
-                anchors.fill: parent
-                hoverEnabled: true
-                cursorShape: Qt.PointingHandCursor
-                onClicked:{
-                    console.log("Login button clicked");
-                    // Here you can add the logic to handle the login action
-                }
-            }
-        }
-    }
+					Text{
+						id: usernameFormLabel
+						text: "USERNAME"
+						font.family: "IBM Plex Sans"
+						font.pixelSize: 12
+						font.weight: Font.Bold
+						color: "#5a6266"
+					}
+					TextField{
+						id: usernameTextField
+						width: parent.width
+						height: 38
+						font.family: "IBM Plex Sans"
+						font.pixelSize: 14
+						font.weight: Font.Normal
+						color: "#1a1d20"
+						placeholderText: "Enter your username"
+						placeholderTextColor: "#5a6266"
+						verticalAlignment: Text.AlignVCenter
+						leftPadding: 12
+						rightPadding: 12
+						background: Rectangle{
+							color: "transparent"
+							radius: 10
+							border.color: usernameTextField.activeFocus ? "#7b5c40" : "#5a6266"
+						}
+					}
+				}
+				Column{
+					id: passwordForm
+					spacing: 6
+					width: parent.width
+
+					Text{
+						id: passwordFormLabel
+						text: "PASSWORD"
+						font.family: "IBM Plex Sans"
+						font.pixelSize: 12
+						font.weight: Font.Bold
+						color: "#5a6266"
+					}
+					TextField{
+						id: passwordTextField
+						width: parent.width
+						height: 38
+						font.family: "IBM Plex Sans"
+						font.pixelSize: 14
+						font.weight: Font.Normal
+						color: "#1a1d20"
+						placeholderText: "Enter your password"
+						placeholderTextColor: "#5a6266"
+						verticalAlignment: Text.AlignVCenter
+						leftPadding: 12
+						rightPadding: 12
+						background: Rectangle{
+							color: "transparent"
+							radius: 10
+							border.color: passwordTextField ? "#7b5c40" : "#5a6266"	
+						}
+					}
+				}
+				RowLayout{
+					id: otherLoginOption
+					width: parent.width
+
+					CheckBox{
+						id: rememberMe
+						text: "Remember Me"
+						Layout.alignment: Qt.AlignLeft
+						font.family: "IBM Plex Sans"
+						font.pixelSize: 13
+						font.weight: Font.Normal
+					}
+					Text{
+						id: resetPassword
+						text: "Reset Password"
+						Layout.alignment: Qt.AlignRight
+						font.family: "IBM Plex Sans"
+						font.pixelSize: 13
+						font.weight: Font.DemiBold
+					}
+				}
+				Button{
+					id: loginButton
+					text: "LOGIN"
+					palette.buttonText: hovered ? "black" : "white"
+					width: parent.width
+					height: 46
+					font.family: "IBM Plex Sans"
+					font.pixelSize: 14
+					font.weight: Font.Bold
+					hoverEnabled: true
+					MouseArea{
+						anchors.fill: parent
+						cursorShape: Qt.PointingHandCursor
+					}
+					background: Rectangle{
+						color: "#7b5c40"
+						radius: 4
+					}
+				}
+			}
+		}
+	}
 }
