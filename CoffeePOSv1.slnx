@@ -11,6 +11,9 @@
     <File Path="CoffeePOSv1/Brewdesk_settings.qml" />
     <File Path="CoffeePOSv1/Brewdesk_suppliers.qml" />
     <File Path="CoffeePOSv1/Brewdesk_transactions.qml" />
+    <File Path="CoffeePOSv1/LoginPage.qml" />
+    <File Path="CoffeePOSv1/PosPaymentPage.qml" />
+    <File Path="CoffeePOSv1/ReciptPage.qml" />
   </Folder>
   <Project Path="CoffeePOSv1/CoffeePOSv1.vcxproj" Id="79b08cad-94f8-4933-b2b2-d1501e32c6af" />
 </Solution>

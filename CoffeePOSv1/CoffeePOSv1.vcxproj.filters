@@ -64,5 +64,17 @@
     <None Include="CashierSidebar.qml">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="PosCategory.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="LoginPage.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="PosPaymentPage.qml">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="ReceiptPage.qml">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

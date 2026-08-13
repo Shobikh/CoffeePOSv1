@@ -11,5 +11,9 @@
         <file>SettingsPage.qml</file>
         <file>SuppliersPage.qml</file>
         <file>TransactionsPage.qml</file>
+        <file>PosCategory.qml</file>
+        <file>LoginPage.qml</file>
+        <file>PosPaymentPage.qml</file>
+        <file>ReceiptPage.qml</file>
     </qresource>
 </RCC>

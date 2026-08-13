@@ -99,8 +99,12 @@
     <QtRcc Include="qml.qrc" />
     <None Include="DashboardPage.qml" />
     <None Include="InventoryPage.qml" />
+    <None Include="LoginPage.qml" />
+    <None Include="PosCategory.qml" />
     <None Include="PosPage.qml" />
+    <None Include="PosPaymentPage.qml" />
     <None Include="ProductsPage.qml" />
+    <None Include="ReceiptPage.qml" />
     <None Include="ReportsPage.qml" />
     <None Include="SettingsPage.qml" />
     <None Include="SuppliersPage.qml" />

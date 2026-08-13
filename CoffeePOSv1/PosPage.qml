@@ -185,7 +185,7 @@ Rectangle {
         }
         Rectangle {
             id: category_row
-
+            property string activeTab: cat_tab_All
             y: 75
 
             height: 52
@@ -206,8 +206,19 @@ Rectangle {
 
                 border.color: "#dee2e6"
                 border.width: 1
-                color: "#efe3d8"
+                color: activeTab === cat_tab_All ? "#dee2e6" : (tabAllMouse.containsMouse ? "#fef5e7" : "#efe3d8")
                 radius: 2
+
+                MouseArea{
+                    id: tabAllMouse
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    hoverEnabled: true
+                    onClicked: {
+                        console.log("All category clicked");
+                        // Here you can add the logic to filter products by "All" category
+                    }
+                }
 
                 Text {
                     id: cat_label
@@ -239,8 +250,20 @@ Rectangle {
 
                 border.color: "#dee2e6"
                 border.width: 1
-                color: "#efe3d8"
+                color: activeTab === cat_tab_Coffee ? "#fef5e7" : (tabCoffeeMouse.containsMouse ? "#fef5e7" : "#ffffff")
                 radius: 2
+
+                MouseArea{
+                    id: tabCoffeeMouse
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    hoverEnabled: true
+                    onClicked: {
+                        console.log("Coffee category clicked");
+                        activeTab: cat_tab_Coffee
+                        // Here you can add the logic to filter products by "Coffee" category
+                    }
+                }
 
                 Text {
                     id: cat_label_1
@@ -251,7 +274,7 @@ Rectangle {
                     height: 16
                     width: 38
 
-                    color: "#7b5c40"
+                    color: "#5a6266"
                     font.family: "IBM Plex Sans"
                     font.pixelSize: 12
                     font.weight: Font.DemiBold
@@ -272,8 +295,19 @@ Rectangle {
 
                 border.color: "#dee2e6"
                 border.width: 1
-                color: "#ffffff"
+                color: tabTeaMouse.containsMouse ? "#fef5e7" : "#ffffff"
                 radius: 2
+
+                MouseArea{
+                    id: tabTeaMouse
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    hoverEnabled: true
+                    onClicked: {
+                        console.log("Tea category clicked");
+                        // Here you can add the logic to filter products by "Tea" category
+                    }
+                }
 
                 Text {
                     id: cat_label_2
@@ -305,8 +339,19 @@ Rectangle {
 
                 border.color: "#dee2e6"
                 border.width: 1
-                color: "#ffffff"
+                color: tabPastriesMouse.containsMouse ? "#fef5e7" : "#ffffff"
                 radius: 2
+
+                MouseArea{
+                    id: tabPastriesMouse
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    hoverEnabled: true
+                    onClicked: {
+                        console.log("Pastries category clicked");
+                        // Here you can add the logic to filter products by "Pastries" category
+                    }
+                }
 
                 Text {
                     id: cat_label_3
@@ -338,8 +383,19 @@ Rectangle {
 
                 border.color: "#dee2e6"
                 border.width: 1
-                color: "#ffffff"
+                color: tabSnacksMouse.containsMouse ? "#fef5e7" : "#ffffff"
                 radius: 2
+
+                MouseArea{
+                    id: tabSnacksMouse
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    hoverEnabled: true
+                    onClicked: {
+                        console.log("Snacks category clicked");
+                        // Here you can add the logic to filter products by "Snacks" category
+                    }
+                }
 
                 Text {
                     id: cat_label_4
@@ -371,8 +427,19 @@ Rectangle {
 
                 border.color: "#dee2e6"
                 border.width: 1
-                color: "#ffffff"
+                color: tabOtherMouse.containsMouse ? "#fef5e7" : "#ffffff"
                 radius: 2
+
+                MouseArea{
+                    id: tabOtherMouse
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    hoverEnabled: true
+                    onClicked: {
+                        console.log("Other category clicked");
+                        // Here you can add the logic to filter products by "Other" category
+                    }
+                }
 
                 Text {
                     id: cat_label_5
@@ -820,7 +887,7 @@ Rectangle {
                 height: 29
                 width: 308
 
-                border.color: "#dee2e6"
+                border.color: "transparent"
                 border.width: 1
                 color: "transparent"
 
@@ -869,7 +936,19 @@ Rectangle {
                 height: 46
                 width: 308
 
-                color: "#7b5c40"
+                color: payMouse.containsMouse ? "#5a4a30" : "#7b5c40"
+
+                MouseArea{
+                    id: payMouse
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    cursorShape: Qt.PointingHandCursor
+                    
+                    onClicked: {
+                        console.log("Proceed to pay clicked. Total amount: $" + grandTotalAmount.toFixed(2));
+                        // Here you can add the logic to proceed to payment
+                    }
+                }
 
                 Text {
                     id: pay_label
