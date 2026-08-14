@@ -60,7 +60,6 @@ Rectangle{
 							font.weight: Font.DemiBold
 							color: "#5a6266"
 							Layout.alignment: Qt.AlignRight
-							
 						}
 					}
 				}
@@ -197,17 +196,17 @@ Rectangle{
 						Layout.preferredHeight: 195
 						border.color: "grey"
 						Column{
-								anchors.fill: parent
-								padding: 16
-								spacing: 12
-								Text{
-									text: "Recent Transaction"
-									font.family: "IBM Plex Sans"
-									font.pixelSize: 14
-									font.weight: Font.Bold
-									color: "#1a1d20"
-								}
+							anchors.fill: parent
+							padding: 16
+							spacing: 12
+							Text{
+								text: "Recent Transaction"
+								font.family: "IBM Plex Sans"
+								font.pixelSize: 14
+								font.weight: Font.Bold
+								color: "#1a1d20"
 							}
+						}
 					}
 				}
 				Rectangle{
