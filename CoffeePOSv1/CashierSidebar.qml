@@ -1,330 +1,66 @@
 import QtQuick
-import QtQuick.Shapes
-
-Rectangle {
-    id: sidebar_member
-    width: 200
-    height: 768
-    color: "#f5ece5"
-    property string activePage: "pos"
-
-    Rectangle {
-        id: brand_wrapper
-
-        y: 24
-
-        height: 24
-        width: 141
-
-        color: "transparent"
-
-        Rectangle {
-            id: brand_logo
-
-            x: 16
-
-            height: 24
-            width: 24
-
-            color: "#7b5c40"
-            radius: 2
-
-            Rectangle {
-                id: coffee
-
-                x: 5
-                y: 5
-
-                height: 14
-                width: 14
-
-                clip: true
-                color: "transparent"
-
-                Shape {
-                    id: _vector
-
-                    x: 1.75
-                    y: 1.17
-
-                    height: 11.08
-                    width: 11.08
-
-                    ShapePath {
-                        id: _vector_ShapePath0
-
-                        fillColor: "#00000000"
-                        strokeColor: "#ffffff"
-                        strokeWidth: 2
-
-                        PathSvg {
-                            id: _vector_ShapePath0_PathSvg0
-
-                            path: "M 4.0833332162154345 0 L 4.0833332162154345 1.16666663320441 M 6.4166664826242545 0 L 6.4166664826242545 1.16666663320441 M 7.583333115828665 3.49999989961323 C 7.73804273613873 3.4999998996132295 7.8864162897586425 3.561458168847297 7.995812504632724 3.6708543837213785 C 8.105208719506805 3.78025059859546 8.166666432430869 3.9286235959053704 8.166666432430869 4.0833332162154345 L 8.166666432430869 8.749999749033075 C 8.166666432430869 9.36883823027333 7.920833911804604 9.962330219512976 7.483249052308278 10.399915079009302 C 7.0456641928119526 10.837499938505628 6.452171647262306 11.083333015441895 5.83333316602205 11.083333015441895 L 2.33333326640882 11.083333015441895 C 1.7144947851685641 11.083333015441895 1.1210022396189174 10.837499938505628 0.6834173801225916 10.399915079009302 C 0.2458325206262657 9.962330219512976 2.5905203164908963e-16 9.36883823027333 0 8.749999749033075 L 0 4.0833332162154345 C 0 3.9286235959053704 0.061458130156566426 3.78025059859546 0.1708543450306479 3.6708543837213785 C 0.28025055990472936 3.561458168847297 0.42862369629214103 3.4999998996132295 0.583333316602205 3.49999989961323 L 8.749999749033075 3.49999989961323 C 9.36883823027333 3.499999899613231 9.962330219512976 3.7458324202394957 10.399915079009302 4.183417279735822 C 10.837499938505628 4.621002139232147 11.083333015441895 5.214494684781794 11.083333015441895 5.83333316602205 C 11.083333015441895 6.452171647262306 10.837499938505628 7.0456641928119526 10.399915079009302 7.483249052308278 C 9.962330219512976 7.920833911804604 9.36883823027333 8.166666432430867 8.749999749033075 8.166666432430869 L 8.166666432430869 8.166666432430869 M 1.749999949806615 0 L 1.749999949806615 1.16666663320441"
-                        }
-                    }
-                }
-            }
-        }
-        Text {
-            id: brand_title
-
-            x: 48
-            y: 1.50
-
-            height: 21
-            width: 78
-
-            color: "#1a1d20"
-            font.family: "IBM Plex Sans"
-            font.pixelSize: 16
-            font.weight: Font.Bold
-            horizontalAlignment: Text.AlignLeft
-            text: "Jahis Coffee"
-            textFormat: Text.PlainText
-            verticalAlignment: Text.AlignTop
-        }
-    }
-    Rectangle {
-        id: nav_list
-
-        y: 80
-
-        height: 324
-        width: 200
-
-        color: "transparent"
-
-        // POS //
-        Rectangle {
-            id: nav_item_POS
-
-            height: 37
-            width: 200
-
-            color: activePage === "pos" ? "#7b5c40" : (nav_item_POS_MouseArea.containsMouse ? "#efe3d8" : "transparent")
-
-            MouseArea{
-                id: nav_item_POS_MouseArea
-                anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
-                hoverEnabled: true
-                onClicked: {
-                    console.log("POS clicked")
-                    mainLoader.source = "PosPage.qml"
-                }
-            }
-
-            Rectangle {
-                id: layout_dashboard
-
-                x: 16
-                y: 10.50
-
-                height: 16
-                width: 16
-
-                clip: true
-                color: "transparent"
-
-                Shape {
-                    id: _vector_1
-
-                    x: 2
-                    y: 2
-
-                    height: 12
-                    width: 12
-
-                    ShapePath {
-                        id: _vector_1_ShapePath0
-
-                        fillColor: "#00000000"
-                        strokeColor: "#ffffff"
-                        strokeWidth: 2
-
-                        PathSvg {
-                            id: _vector_1_ShapePath0_PathSvg0
-
-                            path: "M 0.6666666666666666 0 L 4 0 C 4.368189811706543 0 4.666666666666666 0.29847681522369385 4.666666666666666 0.6666666666666666 L 4.666666666666666 5.333333333333333 C 4.666666666666666 5.7015234629313145 4.368189811706543 6 4 6 L 0.6666666666666666 6 C 0.29847681522369385 6 0 5.7015234629313145 0 5.333333333333333 L 0 0.6666666666666666 C 0 0.29847681522369385 0.29847681522369385 0 0.6666666666666666 0 Z M 8 0 L 11.333333333333332 0 C 11.701523145039875 0 12 0.29847681522369385 12 0.6666666666666666 L 12 2.6666666666666665 C 12 3.0348564783732095 11.701523145039875 3.333333333333333 11.333333333333332 3.333333333333333 L 8 3.333333333333333 C 7.631810148557027 3.333333333333333 7.333333333333333 3.0348564783732095 7.333333333333333 2.6666666666666665 L 7.333333333333333 0.6666666666666666 C 7.333333333333333 0.29847681522369385 7.631810148557027 0 8 0 Z M 8 6 L 11.333333333333332 6 C 11.701523145039875 6 12 6.298476815223693 12 6.666666666666666 L 12 11.333333333333332 C 12 11.701523462931315 11.701523145039875 12 11.333333333333332 12 L 8 12 C 7.631810148557027 12 7.333333333333333 11.701523462931315 7.333333333333333 11.333333333333332 L 7.333333333333333 6.666666666666666 C 7.333333333333333 6.298476815223693 7.631810148557027 6 8 6 Z M 0.6666666666666666 8.666666666666666 L 4 8.666666666666666 C 4.368189811706543 8.666666666666666 4.666666666666666 8.96514348189036 4.666666666666666 9.333333333333332 L 4.666666666666666 11.333333333333332 C 4.666666666666666 11.701523145039875 4.368189811706543 12 4 12 L 0.6666666666666666 12 C 0.29847681522369385 12 0 11.701523145039875 0 11.333333333333332 L 0 9.333333333333332 C 0 8.96514348189036 0.29847681522369385 8.666666666666666 0.6666666666666666 8.666666666666666 Z"
-                        }
-                    }
-                }
-            }
-            Text {
-                id: nav_label_POS
-
-                x: 44
-                y: 10
-
-                height: 17
-                width: 141
-
-                color: activePage === "pos" ? "#ffffff" : "#5a6266"
-                font.family: "IBM Plex Sans"
-                font.pixelSize: 13
-                font.weight: Font.DemiBold
-                horizontalAlignment: Text.AlignLeft
-                text: "POS"
-                textFormat: Text.PlainText
-                verticalAlignment: Text.AlignTop
-                wrapMode: Text.Wrap
-            }
-        }
-        // Transactions //
-        Rectangle {
-            id: nav_item_transactions
-
-            y: 41
-
-            height: 37
-            width: 200
-
-            color: activePage === "transactions" ? "#7b5c40" : (nav_item_transactions_MouseArea.containsMouse ? "#efe3d8" : "transparent")
-
-            MouseArea{
-                id: nav_item_transactions_MouseArea
-                anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
-                hoverEnabled: true
-                onClicked: {
-                    console.log("Transactions clicked")
-                    mainLoader.source = "TransactionsPage.qml"
-                }
-            }
-            Rectangle {
-                id: shopping_cart
-
-                x: 16
-                y: 10.50
-
-                height: 16
-                width: 16
-
-                clip: true
-                color: "transparent"
-
-                Shape {
-                    id: _vector_2
-
-                    x: 1.37
-                    y: 1.37
-
-                    height: 13.30
-                    width: 13.36
-
-                    ShapePath {
-                        id: _vector_2_ShapePath0
-
-                        fillColor: "#00000000"
-                        strokeColor: "#5a6266"
-                        strokeWidth: 2
-
-                        PathSvg {
-                            id: _vector_2_ShapePath0_PathSvg0
-
-                            path: "M 0 0 L 1.3333334922790527 0 L 3.1066665649414062 8.280417231252143 C 3.1717190742492676 8.583672630145038 3.340446929136912 8.854763543537828 3.583807627360026 9.047028170799631 C 3.82716832558314 9.239292798061435 4.129937330881754 9.340702499014949 4.439999898274739 9.333802949162328 L 10.96000035603841 9.333802949162328 C 11.263450205326079 9.333313054006279 11.557655394077301 9.229324074633942 11.794017791748047 9.039012452217218 C 12.030380189418793 8.848700829800494 12.194759458303452 8.583452538839769 12.260000864664713 8.287083750593508 L 13.360000610351562 3.333501280349014 L 2.0466666221618652 3.333501280349014 M 4.633463541666666 12.634100067416526 C 4.633463541666666 13.002308430037093 4.334986686706543 13.300800323486328 3.966796875 13.300800323486328 C 3.5986070235570273 13.300800323486328 3.300130208333333 13.002308430037093 3.300130208333333 12.634100067416526 C 3.300130208333333 12.265891665057527 3.5986070235570273 11.967399811346723 3.966796875 11.967399811346723 C 4.334986686706543 11.967399811346723 4.633463541666666 12.265891665057527 4.633463541666666 12.634100067416526 Z M 11.966796875 12.634100067416526 C 11.966796875 13.002308430037093 11.668320020039875 13.300800323486328 11.300130208333332 13.300800323486328 C 10.93194035689036 13.300800323486328 10.633463541666666 13.002308430037093 10.633463541666666 12.634100067416526 C 10.633463541666666 12.265891665057527 10.93194035689036 11.967399811346723 11.300130208333332 11.967399811346723 C 11.668320020039875 11.967399811346723 11.966796875 12.265891665057527 11.966796875 12.634100067416526 Z"
-                        }
-                    }
-                }
-            }
-            Text {
-                id: nav_label_1
-
-                x: 44
-                y: 10
-
-                height: 17
-                width: 141
-
-                color: activePage === "transactions" ? "#ffffff" : "#5a6266"
-                font.family: "IBM Plex Sans"
-                font.pixelSize: 13
-                font.weight: Font.Medium
-                horizontalAlignment: Text.AlignLeft
-                text: "Transactions"
-                textFormat: Text.PlainText
-                verticalAlignment: Text.AlignTop
-                wrapMode: Text.Wrap
-            }
-        }
-        // Reports //
-        Rectangle {
-            id: nav_item_Reports
-
-            y: 82
-
-            height: 37
-            width: 200
-
-            color: activePage === "reports" ? "#7b5c40" : (nav_item_Reports_MouseArea.containsMouse ? "#efe3d8" : "transparent")
-
-            MouseArea{
-                id: nav_item_Reports_MouseArea
-                anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
-                hoverEnabled: true
-                onClicked: {
-                    console.log("Reports clicked")
-                    mainLoader.source = "ReportsPage.qml"
-                }
-            }
-
-            Rectangle {
-                id: coffee_1
-
-                x: 16
-                y: 10.50
-
-                height: 16
-                width: 16
-
-                clip: true
-                color: "transparent"
-
-                Shape {
-                    id: _vector_3
-
-                    x: 2
-                    y: 1.33
-
-                    height: 12.67
-                    width: 12.67
-
-                    ShapePath {
-                        id: _vector_3_ShapePath0
-
-                        fillColor: "#00000000"
-                        strokeColor: "#5a6266"
-                        strokeWidth: 2
-
-                        PathSvg {
-                            id: _vector_3_ShapePath0_PathSvg0
-
-                            path: "M 4.6666667837845655 0 L 4.6666667837845655 1.33333336679559 M 7.3333335173757455 0 L 7.3333335173757455 1.33333336679559 M 8.666666884171335 4.00000010038677 C 8.843477888320061 4.000000100386769 9.013047673004905 4.070238126145865 9.138071925298917 4.195262378439876 C 9.263096177592928 4.320286630733888 9.333333567569131 4.48985577963584 9.333333567569131 4.6666667837845655 L 9.333333567569131 10.000000250966925 C 9.333333567569131 10.70724426756183 9.052382100315643 11.385520863169633 8.552285091139598 11.885617872345678 C 8.052188081963553 12.385714881521723 7.3739108505728534 12.666666984558105 6.66666683397795 12.666666984558105 L 2.66666673359118 12.666666984558105 C 1.9594227169962766 12.666666984558105 1.2811454856055775 12.385714881521723 0.7810484764295325 11.885617872345678 C 0.2809514672534874 11.385520863169633 2.9605948066348864e-16 10.70724426756183 0 10.000000250966925 L 0 4.6666667837845655 C 0 4.48985577963584 0.07023786681337185 4.320286630733888 0.19526211910738311 4.195262378439876 C 0.3202863714013944 4.070238126145865 0.48985567924906914 4.000000100386769 0.666666683397795 4.00000010038677 L 10.000000250966925 4.00000010038677 C 10.70724426756183 4.000000100386771 11.385520863169633 4.280951567640257 11.885617872345678 4.7810485768163025 C 12.385714881521723 5.2811455859923475 12.666666984558105 5.959422817383047 12.666666984558105 6.66666683397795 C 12.666666984558105 7.3739108505728534 12.385714881521723 8.052188081963553 11.885617872345678 8.552285091139598 C 11.385520863169633 9.052382100315643 10.70724426756183 9.33333356756913 10.000000250966925 9.333333567569131 L 9.333333567569131 9.333333567569131 M 2.000000050193385 0 L 2.000000050193385 1.33333336679559"
-                        }
-                    }
-                }
-            }
-            Text {
-                id: nav_label_2
-
-                x: 44
-                y: 10
-
-                height: 17
-                width: 141
-
-                color: activePage === "reports" ? "#ffffff" : "#5a6266"
-                font.family: "IBM Plex Sans"
-                font.pixelSize: 13
-                font.weight: Font.Medium
-                horizontalAlignment: Text.AlignLeft
-                text: "Reports"
-                textFormat: Text.PlainText
-                verticalAlignment: Text.AlignTop
-                wrapMode: Text.Wrap
-            }
-        }
-    }
+import QtQuick.Layouts
+
+Rectangle{
+	id: sidebarCard
+	Layout.preferredWidth: 200
+	Layout.fillHeight: true
+	color: "#f5ece5"
+	property string activePage: "dashboard"
+	signal navigationRequested(string page)
+	ColumnLayout{
+		id: sidebarContent
+		spacing: 32
+		Row{
+			id: sidebarHeader
+			spacing: 8
+			Layout.leftMargin: 16
+			Layout.topMargin: 32
+			Image{
+				id: appLogoSidebar
+				source: "assets/applogo.png"
+				width: 40
+				height: 40
+			}
+			Column{
+				id: sidebarTitle
+				spacing: 4
+				Text{
+					text: "Jahis Coffee"
+					font.family: "IBM Plex Sans"
+					font.pixelSize: 16
+					font.weight: Font.Bold
+					color: "#1a1d20"
+				}
+				Text{
+					text: "Jayyid wa Rokhis"
+					font.family: "IBM Plex Sans"
+					font.pixelSize: 12
+					font.weight: Font.Normal
+					color: "#5a6266"
+				}
+			}
+		}
+		ColumnLayout{
+			id: navList
+			spacing: 4
+			Layout.fillWidth: true
+			Layout.alignment: Qt.AlignTop
+			NavItem{
+				label: "POS"
+				isActive: sidebarCard.activePage === "PosPage.qml"
+				onClicked: sidebarCard.navigationRequested("PosPage.qml")
+			}
+			NavItem{
+				label: "Transactions"
+				isActive: sidebarCard.activePage === "TransactionsPage.qml"
+				onClicked: sidebarCard.navigationRequested("TransactionsPage.qml")
+			}
+			NavItem{
+				label: "Reports"
+				isActive: sidebarCard.activePage === "ReportsPage.qml"
+				onClicked: sidebarCard.navigationRequested("ReportsPage.qml")
+			}
+		}
+	}
 }

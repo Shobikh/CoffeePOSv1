@@ -76,5 +76,8 @@
     <None Include="ReceiptPage.qml">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="NavItem.qml">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
