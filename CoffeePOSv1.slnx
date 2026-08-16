@@ -3,17 +3,21 @@
     <Platform Name="x64" />
   </Configurations>
   <Folder Name="/Solution Items/">
-    <File Path="CoffeePOSv1/Brewdesk_dashboard.qml" />
-    <File Path="CoffeePOSv1/Brewdesk_inventory.qml" />
-    <File Path="CoffeePOSv1/Brewdesk_pos.qml" />
-    <File Path="CoffeePOSv1/Brewdesk_products.qml" />
-    <File Path="CoffeePOSv1/Brewdesk_reports.qml" />
-    <File Path="CoffeePOSv1/Brewdesk_settings.qml" />
-    <File Path="CoffeePOSv1/Brewdesk_suppliers.qml" />
-    <File Path="CoffeePOSv1/Brewdesk_transactions.qml" />
-    <File Path="CoffeePOSv1/LoginPage.qml" />
-    <File Path="CoffeePOSv1/PosPaymentPage.qml" />
-    <File Path="CoffeePOSv1/ReciptPage.qml" />
+    <File Path="CoffeePOSv1/pages/component/AdminSidebar.qml" />
+    <File Path="CoffeePOSv1/pages/component/CashierSidebar.qml" />
+    <File Path="CoffeePOSv1/pages/component/NavItem.qml" />
+    <File Path="CoffeePOSv1/pages/DashboardPage.qml" />
+    <File Path="CoffeePOSv1/pages/InventoryPage.qml" />
+    <File Path="CoffeePOSv1/pages/LoginPage.qml" />
+    <File Path="CoffeePOSv1/pages/PosCategory.qml" />
+    <File Path="CoffeePOSv1/pages/PosPage.qml" />
+    <File Path="CoffeePOSv1/pages/PosPaymentPage.qml" />
+    <File Path="CoffeePOSv1/pages/ProductsPage.qml" />
+    <File Path="CoffeePOSv1/pages/ReceiptPage.qml" />
+    <File Path="CoffeePOSv1/pages/ReportsPage.qml" />
+    <File Path="CoffeePOSv1/pages/SettingsPage.qml" />
+    <File Path="CoffeePOSv1/pages/SuppliersPage.qml" />
+    <File Path="CoffeePOSv1/pages/TransactionsPage.qml" />
   </Folder>
   <Project Path="CoffeePOSv1/CoffeePOSv1.vcxproj" Id="79b08cad-94f8-4933-b2b2-d1501e32c6af" />
 </Solution>

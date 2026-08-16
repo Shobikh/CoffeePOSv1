@@ -2,6 +2,8 @@ import QtQuick 2.9
 import QtQuick.Window 2.2
 import QtQuick.Controls
 import QtQuick.Layouts
+import "./pages" as Pages
+import "./pages/component" as PagesComponent
 
 Window {
     visible: true
@@ -11,7 +13,7 @@ Window {
     RowLayout{
         anchors.fill: parent
         spacing: 0
-        AdminSidebar{
+        PagesComponent.AdminSidebar{
             Layout.preferredWidth: 200
             Layout.fillHeight: true
             onNavigationRequested: (page) => mainStack.push(page)
@@ -20,7 +22,7 @@ Window {
             id: mainStack
             Layout.fillWidth: true
             Layout.fillHeight: true
-            initialItem: "DashboardPage.qml"
+            initialItem: Pages.DashboardPage
         }
     }
 }

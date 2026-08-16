@@ -1,5 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
+import "file://C:/Users/JuraganIwak/source/repos/CoffeePOSv1/CoffeePOSv1/assets/" as AppLogo
+import ".."
 
 Rectangle{
 	id: sidebarCard
@@ -18,7 +20,7 @@ Rectangle{
 			Layout.topMargin: 32
 			Image{
 				id: appLogoSidebar
-				source: "assets/applogo.png"
+				//source: AppLogo.("applogo.png")
 				width: 40
 				height: 40
 			}
@@ -26,14 +28,14 @@ Rectangle{
 				id: sidebarTitle
 				spacing: 4
 				Text{
-					text: "Jahis Coffee"
+					text: "Mardja Coffee"
 					font.family: "IBM Plex Sans"
 					font.pixelSize: 16
 					font.weight: Font.Bold
 					color: "#1a1d20"
 				}
 				Text{
-					text: "Jayyid wa Rokhis"
+					text: "Sunggingan, Kota Kudus"
 					font.family: "IBM Plex Sans"
 					font.pixelSize: 12
 					font.weight: Font.Normal

@@ -94,22 +94,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <None Include="AdminSidebar.qml" />
-    <None Include="CashierSidebar.qml" />
+    <None Include="pages\component\AdminSidebar.qml" />
+    <None Include="pages\component\CashierSidebar.qml" />
+    <None Include="pages\component\NavItem.qml" />
+    <None Include="pages\DashboardPage.qml" />
+    <None Include="pages\InventoryPage.qml" />
+    <None Include="pages\LoginPage.qml" />
+    <None Include="pages\PosCategory.qml" />
+    <None Include="pages\PosPage.qml" />
+    <None Include="pages\PosPaymentPage.qml" />
+    <None Include="pages\ProductsPage.qml" />
+    <None Include="pages\ReceiptPage.qml" />
+    <None Include="pages\ReportsPage.qml" />
+    <None Include="pages\SettingsPage.qml" />
+    <None Include="pages\SuppliersPage.qml" />
+    <None Include="pages\TransactionsPage.qml" />
     <QtRcc Include="qml.qrc" />
-    <None Include="DashboardPage.qml" />
-    <None Include="InventoryPage.qml" />
-    <None Include="LoginPage.qml" />
-    <None Include="NavItem.qml" />
-    <None Include="PosCategory.qml" />
-    <None Include="PosPage.qml" />
-    <None Include="PosPaymentPage.qml" />
-    <None Include="ProductsPage.qml" />
-    <None Include="ReceiptPage.qml" />
-    <None Include="ReportsPage.qml" />
-    <None Include="SettingsPage.qml" />
-    <None Include="SuppliersPage.qml" />
-    <None Include="TransactionsPage.qml" />
     <None Include="main.qml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

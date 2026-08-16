@@ -34,49 +34,49 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DashboardPage.qml">
+    <None Include="pages\DashboardPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="InventoryPage.qml">
+    <None Include="pages\InventoryPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="PosPage.qml">
+    <None Include="pages\LoginPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="ProductsPage.qml">
+    <None Include="pages\PosCategory.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="ReportsPage.qml">
+    <None Include="pages\PosPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="SettingsPage.qml">
+    <None Include="pages\PosPaymentPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="SuppliersPage.qml">
+    <None Include="pages\ProductsPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="TransactionsPage.qml">
+    <None Include="pages\ReceiptPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="AdminSidebar.qml">
+    <None Include="pages\ReportsPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="CashierSidebar.qml">
+    <None Include="pages\SettingsPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="PosCategory.qml">
+    <None Include="pages\SuppliersPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="LoginPage.qml">
+    <None Include="pages\TransactionsPage.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="PosPaymentPage.qml">
+    <None Include="pages\component\AdminSidebar.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="ReceiptPage.qml">
+    <None Include="pages\component\CashierSidebar.qml">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="NavItem.qml">
+    <None Include="pages\component\NavItem.qml">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

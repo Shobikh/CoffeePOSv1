@@ -1,21 +1,21 @@
 <RCC>
     <qresource prefix="/qt/qml/coffeeposv1">
         <file>main.qml</file>
-        <file>CashierSidebar.qml</file>
-        <file>AdminSidebar.qml</file>
-        <file>DashboardPage.qml</file>
-        <file>InventoryPage.qml</file>
-        <file>PosPage.qml</file>
-        <file>ProductsPage.qml</file>
-        <file>ReportsPage.qml</file>
-        <file>SettingsPage.qml</file>
-        <file>SuppliersPage.qml</file>
-        <file>TransactionsPage.qml</file>
-        <file>PosCategory.qml</file>
-        <file>LoginPage.qml</file>
-        <file>PosPaymentPage.qml</file>
-        <file>ReceiptPage.qml</file>
         <file>assets/applogo.png</file>
-        <file>NavItem.qml</file>
+        <file>pages/DashboardPage.qml</file>
+        <file>pages/InventoryPage.qml</file>
+        <file>pages/LoginPage.qml</file>
+        <file>pages/PosCategory.qml</file>
+        <file>pages/PosPage.qml</file>
+        <file>pages/PosPaymentPage.qml</file>
+        <file>pages/ProductsPage.qml</file>
+        <file>pages/ReceiptPage.qml</file>
+        <file>pages/ReportsPage.qml</file>
+        <file>pages/SettingsPage.qml</file>
+        <file>pages/SuppliersPage.qml</file>
+        <file>pages/TransactionsPage.qml</file>
+        <file>pages/component/AdminSidebar.qml</file>
+        <file>pages/component/CashierSidebar.qml</file>
+        <file>pages/component/NavItem.qml</file>
     </qresource>
 </RCC>
