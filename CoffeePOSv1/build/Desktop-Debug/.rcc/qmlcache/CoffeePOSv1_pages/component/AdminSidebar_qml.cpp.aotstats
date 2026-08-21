@@ -32,7 +32,7 @@
                         {
                             "codegenResult": 0,
                             "column": 15,
-                            "durationMicroseconds": 0,
+                            "durationMicroseconds": 1000,
                             "functionName": "isActive",
                             "line": 53,
                             "message": ""

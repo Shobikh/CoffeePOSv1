@@ -23,7 +23,7 @@ Window {
             id: mainStack
             Layout.fillWidth: true
             Layout.fillHeight: true
-            initialItem: "./pages/DashboardPage.qml"
+            initialItem: "./pages/ProductsPage.qml"
         }
     }
 }

@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 // import "file://C:/Users/JuraganIwak/source/repos/CoffeePOSv1/CoffeePOSv1/assets/" as AppLogo
-import ".."
+// import ".."
 
 Rectangle{
 	id: sidebarCard

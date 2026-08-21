@@ -1,4 +1,4 @@
-set(qml_import_scanner_imports_count 32)
+set(qml_import_scanner_imports_count 30)
 set(qml_import_scanner_import_0 "CLASSNAME;QtQuick2Plugin;LINKTARGET;Qt6::qtquick2plugin;NAME;QtQuick;PATH;/usr/lib/x86_64-linux-gnu/qt6/qml/QtQuick;PLUGIN;qtquick2plugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQuick/;RELATIVEPATH;QtQuick;TYPE;module;")
 set(qml_import_scanner_import_1 "CLASSNAME;QtQmlPlugin;LINKTARGET;Qt6::qmlplugin;NAME;QtQml;PATH;/usr/lib/x86_64-linux-gnu/qt6/qml/QtQml;PLUGIN;qmlplugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQml/;RELATIVEPATH;QtQml;TYPE;module;")
 set(qml_import_scanner_import_2 "NAME;QML;PATH;/usr/lib/x86_64-linux-gnu/qt6/qml/QML;PREFER;:/qt-project.org/imports/QML/;RELATIVEPATH;QML;TYPE;module;")
@@ -29,6 +29,4 @@ set(qml_import_scanner_import_26 "NAME;./pages;PATH;/home/juraganiwak/MyProject/
 set(qml_import_scanner_import_27 "NAME;./pages/component;PATH;/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/component;TYPE;directory;")
 set(qml_import_scanner_import_28 "NAME;./pages;PATH;/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/build/Desktop-Debug/coffeeposv1/pages;TYPE;directory;")
 set(qml_import_scanner_import_29 "NAME;./pages/component;PATH;/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/build/Desktop-Debug/coffeeposv1/pages/component;TYPE;directory;")
-set(qml_import_scanner_import_30 "NAME;..;PATH;/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/build/Desktop-Debug/coffeeposv1/pages;TYPE;directory;")
-set(qml_import_scanner_import_31 "NAME;..;PATH;/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages;TYPE;directory;")
 
