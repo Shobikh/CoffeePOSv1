@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  ".rcc/qmlcache/CoffeePOSv1_main_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_main_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/DashboardPage_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/DashboardPage_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/InventoryPage_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/InventoryPage_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/LoginPage_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/LoginPage_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/PosCategory_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/PosCategory_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/PosPage_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/PosPage_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/PosPaymentPage_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/PosPaymentPage_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/ProductsPage_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/ProductsPage_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/ReceiptPage_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/ReceiptPage_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/ReportsPage_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/ReportsPage_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/SettingsPage_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/SettingsPage_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/SuppliersPage_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/SuppliersPage_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/TransactionsPage_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/TransactionsPage_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/component/AdminSidebar_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/component/AdminSidebar_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/component/CashierSidebar_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/component/CashierSidebar_qml.cpp.aotstats"
+  ".rcc/qmlcache/CoffeePOSv1_pages/component/NavItem_qml.cpp"
+  ".rcc/qmlcache/CoffeePOSv1_pages/component/NavItem_qml.cpp.aotstats"
+  ".rcc/qmlcache/module_CoffeePOSv1.aotstats"
+  "CMakeFiles/module_CoffeePOSv1_aotstats_target"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/module_CoffeePOSv1_aotstats_target.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

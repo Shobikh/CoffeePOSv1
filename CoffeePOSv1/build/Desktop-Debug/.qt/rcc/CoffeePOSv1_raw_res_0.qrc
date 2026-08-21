@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/coffeeposv1/">
+    <file alias="assets/applogo.png">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/assets/applogo.png</file>
+  </qresource>
+</RCC>
+

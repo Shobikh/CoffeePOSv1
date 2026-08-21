@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
-import "file://C:/Users/JuraganIwak/source/repos/CoffeePOSv1/CoffeePOSv1/assets/" as AppLogo
-import ".."
+// import "file://C:/Users/JuraganIwak/source/repos/CoffeePOSv1/CoffeePOSv1/assets/" as AppLogo
+// import ".."
 
 Rectangle{
 	id: sidebarCard
@@ -50,8 +50,8 @@ Rectangle{
 			Layout.alignment: Qt.AlignTop
 			NavItem{
 				label: "Dashboard"
-				isActive: sidebarCard.activePage === "DashboardPage.qml"
-				onClicked: sidebarCard.navigationRequested("DashboardPage.qml")
+				isActive: sidebarCard.activePage === "pages/DashboardPage.qml"
+				onClicked: sidebarCard.navigationRequested("pages/DashboardPage.qml")
 			}
 			NavItem{
 				label: "POS"

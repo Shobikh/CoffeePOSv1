@@ -1,5 +1,5 @@
-import QtQuick 2.9
-import QtQuick.Window 2.2
+import QtQuick
+import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Layouts
 import "./pages" as Pages
@@ -17,12 +17,13 @@ Window {
             Layout.preferredWidth: 200
             Layout.fillHeight: true
             onNavigationRequested: (page) => mainStack.push(page)
+            activePage: ".."
         }
         StackView{
             id: mainStack
             Layout.fillWidth: true
             Layout.fillHeight: true
-            initialItem: Pages.DashboardPage
+            initialItem: "./pages/DashboardPage.qml"
         }
     }
 }

@@ -1,5 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QDirIterator>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -9,8 +11,15 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
+    // qDebug() <<"RESOURCE CONTENT";
+    // QDirIterator it(":", QDirIterator::Subdirectories);
+    // while (it.hasNext()){
+    //     qDebug() << it.next();
+    // }
+    // qDebug();
+
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/qt/qml/coffeeposv1/main.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/coffeeposv1/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
 

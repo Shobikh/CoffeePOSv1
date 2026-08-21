@@ -1,0 +1,21 @@
+<RCC>
+  <qresource prefix="/coffeeposv1/">
+    <file alias="main.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/main.qml</file>
+    <file alias="pages/DashboardPage.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/DashboardPage.qml</file>
+    <file alias="pages/InventoryPage.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/InventoryPage.qml</file>
+    <file alias="pages/LoginPage.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/LoginPage.qml</file>
+    <file alias="pages/PosCategory.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/PosCategory.qml</file>
+    <file alias="pages/PosPage.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/PosPage.qml</file>
+    <file alias="pages/PosPaymentPage.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/PosPaymentPage.qml</file>
+    <file alias="pages/ProductsPage.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/ProductsPage.qml</file>
+    <file alias="pages/ReceiptPage.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/ReceiptPage.qml</file>
+    <file alias="pages/ReportsPage.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/ReportsPage.qml</file>
+    <file alias="pages/SettingsPage.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/SettingsPage.qml</file>
+    <file alias="pages/SuppliersPage.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/SuppliersPage.qml</file>
+    <file alias="pages/TransactionsPage.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/TransactionsPage.qml</file>
+    <file alias="pages/component/AdminSidebar.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/component/AdminSidebar.qml</file>
+    <file alias="pages/component/CashierSidebar.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/component/CashierSidebar.qml</file>
+    <file alias="pages/component/NavItem.qml">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/pages/component/NavItem.qml</file>
+  </qresource>
+</RCC>
+

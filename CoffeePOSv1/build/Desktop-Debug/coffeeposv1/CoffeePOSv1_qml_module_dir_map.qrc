@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/coffeeposv1">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/build/Desktop-Debug/coffeeposv1</file>
+
+  </qresource>
+</RCC>

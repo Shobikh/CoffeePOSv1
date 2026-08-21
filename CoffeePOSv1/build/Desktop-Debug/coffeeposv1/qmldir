@@ -1,0 +1,20 @@
+module coffeeposv1
+typeinfo CoffeePOSv1.qmltypes
+prefer :/coffeeposv1/
+DashboardPage 1.0 pages/DashboardPage.qml
+InventoryPage 1.0 pages/InventoryPage.qml
+LoginPage 1.0 pages/LoginPage.qml
+PosCategory 1.0 pages/PosCategory.qml
+PosPage 1.0 pages/PosPage.qml
+PosPaymentPage 1.0 pages/PosPaymentPage.qml
+ProductsPage 1.0 pages/ProductsPage.qml
+ReceiptPage 1.0 pages/ReceiptPage.qml
+ReportsPage 1.0 pages/ReportsPage.qml
+SettingsPage 1.0 pages/SettingsPage.qml
+SuppliersPage 1.0 pages/SuppliersPage.qml
+TransactionsPage 1.0 pages/TransactionsPage.qml
+AdminSidebar 1.0 pages/component/AdminSidebar.qml
+CashierSidebar 1.0 pages/component/CashierSidebar.qml
+NavItem 1.0 pages/component/NavItem.qml
+depends QtQuick
+

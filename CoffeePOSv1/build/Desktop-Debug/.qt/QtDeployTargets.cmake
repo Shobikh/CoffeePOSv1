@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_CoffeePOSv1_FILE /home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/build/Desktop-Debug/CoffeePOSv1)
+set(__QT_DEPLOY_TARGET_CoffeePOSv1_TYPE EXECUTABLE)

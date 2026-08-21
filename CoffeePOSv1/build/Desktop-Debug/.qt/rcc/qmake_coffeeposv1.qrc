@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/coffeeposv1">
+    <file alias="qmldir">/home/juraganiwak/MyProject/CoffeePOSv1/CoffeePOSv1/build/Desktop-Debug/coffeeposv1/qmldir</file>
+  </qresource>
+</RCC>
+
