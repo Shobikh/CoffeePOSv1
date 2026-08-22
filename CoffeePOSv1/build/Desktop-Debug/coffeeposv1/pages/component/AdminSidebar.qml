@@ -20,7 +20,7 @@ Rectangle{
 			Layout.topMargin: 32
 			Image{
 				id: appLogoSidebar
-				//source: AppLogo.("applogo.png")
+				source: ("../assets/applogo.png")
 				width: 40
 				height: 40
 			}
@@ -55,38 +55,38 @@ Rectangle{
 			}
 			NavItem{
 				label: "POS"
-				isActive: sidebarCard.activePage === "PosPage.qml"
-				onClicked: sidebarCard.navigationRequested("PosPage.qml")
+				isActive: sidebarCard.activePage === "pages/PosPage.qml"
+				onClicked: sidebarCard.navigationRequested("pages/PosPage.qml")
 			}
 			NavItem{
 				label: "Products"
-				isActive: sidebarCard.activePage === "ProductsPage.qml"
-				onClicked: sidebarCard.navigationRequested("ProductsPage.qml")
+				isActive: sidebarCard.activePage === "pages/ProductsPage.qml"
+				onClicked: sidebarCard.navigationRequested("pages/ProductsPage.qml")
 			}
 			NavItem{
 				label: "Inventory"
-				isActive: sidebarCard.activePage === "InventoryPage.qml"
-				onClicked: sidebarCard.navigationRequested("InventoryPage.qml")
+				isActive: sidebarCard.activePage === "pages/InventoryPage.qml"
+				onClicked: sidebarCard.navigationRequested("pages/InventoryPage.qml")
 			}
 			NavItem{
 				label: "Suppliers"
-				isActive: sidebarCard.activePage === "SuppliersPage.qml"
-				onClicked: sidebarCard.navigationRequested("SuppliersPage.qml")
+				isActive: sidebarCard.activePage === "pages/SuppliersPage.qml"
+				onClicked: sidebarCard.navigationRequested("pages/SuppliersPage.qml")
 			}
 			NavItem{
 				label: "Transactions"
-				isActive: sidebarCard.activePage === "TransactionsPage.qml"
-				onClicked: sidebarCard.navigationRequested("TransactionsPage.qml")
+				isActive: sidebarCard.activePage === "pages/TransactionsPage.qml"
+				onClicked: sidebarCard.navigationRequested("pages/TransactionsPage.qml")
 			}
 			NavItem{
 				label: "Reports"
-				isActive: sidebarCard.activePage === "ReportsPage.qml"
-				onClicked: sidebarCard.navigationRequested("ReportsPage.qml")
+				isActive: sidebarCard.activePage === "pages/ReportsPage.qml"
+				onClicked: sidebarCard.navigationRequested("pages/ReportsPage.qml")
 			}
 			NavItem{
 				label: "Settings"
-				isActive: sidebarCard.activePage === "SettingsPage.qml"
-				onClicked: sidebarCard.navigationRequested("SettingsPage.qml")
+				isActive: sidebarCard.activePage === "pages/SettingsPage.qml"
+				onClicked: sidebarCard.navigationRequested("pages/SettingsPage.qml")
 			}
 		}
 	}

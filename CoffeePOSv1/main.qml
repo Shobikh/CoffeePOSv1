@@ -17,13 +17,13 @@ Window {
             Layout.preferredWidth: 200
             Layout.fillHeight: true
             onNavigationRequested: (page) => mainStack.push(page)
-            activePage: ".."
+            activePage: ""
         }
         StackView{
             id: mainStack
             Layout.fillWidth: true
             Layout.fillHeight: true
-            initialItem: "./pages/ProductsPage.qml"
+            initialItem: "./pages/DashboardPage.qml"
         }
     }
 }

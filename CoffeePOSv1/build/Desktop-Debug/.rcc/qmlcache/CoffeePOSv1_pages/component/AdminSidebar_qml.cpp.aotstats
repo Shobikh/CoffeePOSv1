@@ -7,6 +7,14 @@
                     "entries": [
                         {
                             "codegenResult": 0,
+                            "column": 13,
+                            "durationMicroseconds": 0,
+                            "functionName": "source",
+                            "line": 23,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
                             "column": 19,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
@@ -32,7 +40,7 @@
                         {
                             "codegenResult": 0,
                             "column": 15,
-                            "durationMicroseconds": 1000,
+                            "durationMicroseconds": 0,
                             "functionName": "isActive",
                             "line": 53,
                             "message": ""
